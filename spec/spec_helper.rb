@@ -108,4 +108,6 @@ RSpec.configure do |config|
   config.expose_dsl_globally = true
 
   config.infer_spec_type_from_file_location!
+
+  config.include Rails.application.routes.url_helpers
 end

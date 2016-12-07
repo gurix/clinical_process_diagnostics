@@ -1,0 +1,11 @@
+h1.hidden = t('.title')
+
+= simple_form_for(@client) do |f| 
+  = f.input :identifier, placeholder: t('.identifier_hint') if @client.identifier.blank?
+  - if @client.identifier.present? && @client.name.blank?
+    = f.input :name
+    = f.input :identifier, as: :hidden
+    = f.hidden_field :ask_for_name, value: true
+  = f.submit t('shared.next'), class: 'btn btn-primary'
+  .form-group
+    = t('shared.required')
