@@ -1,0 +1,21 @@
+development:
+  clients:
+    default:
+      database: cpd_development
+      hosts:
+        - localhost:27017
+test:
+  clients:
+    default:
+      database: cpd_est
+      hosts:
+        - localhost:27017
+      options:
+        read:
+          mode: :primary
+        max_pool_size: 1
+
+production:
+  clients:
+    default:
+      uri: <%= ENV['MONGODB_URI'] %>

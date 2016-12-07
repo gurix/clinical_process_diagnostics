@@ -1,0 +1,14 @@
+de:
+  shared:
+    save: Speichern
+    cancel: Abbrechen
+    edit: Bearbeiten
+    delete: Löschen
+    next: Weiter
+    back: Zurück
+    ask_for_delete_entry: Wollen Sie diesen Eintrag wirklich löschen?
+    error: Die Eingabe konnte nicht gespeichert werden, überprüfen Sie bitte ihre Eingaben.
+
+  pages:
+    index:
+      title: Clinlical Process Diagnostics
