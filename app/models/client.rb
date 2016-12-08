@@ -9,5 +9,5 @@ class Client
   validates :identifier, uniqueness: true
   validates :name, presence: true
 
-  has_many :srs_sessions, dependent: :destroy, class_name: 'Survey::Srs', inverse_of: :client
+  has_many :session_rating_scale_sessions, dependent: :destroy, class_name: 'Survey::SessionRatingScale', inverse_of: :client
 end

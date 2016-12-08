@@ -1,5 +1,5 @@
 module Survey
-  class Srs
+  class SessionRatingScale
     include Mongoid::Document
     include Mongoid::Timestamps
 
@@ -7,7 +7,7 @@ module Survey
 
     validates :version, presence: true
 
-    belongs_to :client, inverse_of: :srs_sessions
-    belongs_to :therapist, inverse_of: :srs_sessions
+    belongs_to :client, inverse_of: :session_rating_scale_sessions
+    belongs_to :therapist, inverse_of: :session_rating_scale_sessions
   end
 end

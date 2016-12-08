@@ -9,5 +9,5 @@ class Therapist
   validates :email, uniqueness: true
   validates :name, presence: true
 
-  has_many :srs_sessions, dependent: :destroy, class_name: 'Survey::Srs', inverse_of: :therapist
+  has_many :session_rating_scale_sessions, dependent: :destroy, class_name: 'Survey::SessionRatingScale', inverse_of: :therapist
 end
