@@ -19,7 +19,8 @@ feature 'client entrance' do
 
     fill_in 'Bitte geben Sie ihren Namen an.', with: 'Hanf Ueli'
 
-    click_button 'Weiter'
-    expect(current_url).to eq 'https://www.microsoft.com/'
+    expect { click_button 'Weiter' }.to change { Client.count }.by(1)
+
+    expect(current_path).to eq new_client_survey_session_rating_scale_path(Client.last)
   end
 end

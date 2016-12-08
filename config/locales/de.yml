@@ -13,12 +13,20 @@ de:
   pages:
     index:
       title: Clinlical Process Diagnostics
+      new_client: Meine Sitzung bewerten
   
   clients:
     new:
       title: Sitzung bewerten
       identifier_hint: Die Klienten-Nummer wird ihnen durch Ihren Therapeuten bekannt gegeben.
   
+  survey:
+    session_rating_scales:
+      new:
+        please_choose_a_therapist: Bitte wählen Sie ihren Therapeuten aus. 
+      create:
+        session_suceessfully_created: Ihre Bewertung wurde erfolgreich gepeichert. Besten Dank.
+
   mongoid:
      attributes:
         client:

@@ -7,7 +7,6 @@ h1.hidden = title t('.title')
         = f.input :name
         = f.input :identifier, as: :hidden
         = f.hidden_field :ask_for_name, value: true
-      = f.submit t('shared.next'), class: 'btn btn-primary'
-      hr
+      = f.submit t('shared.next'), class: 'btn btn-primary pull-right'
       .form-group
         = t('shared.required')
