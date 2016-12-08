@@ -1,12 +1,16 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 
+@import "variables";
 @import "bootstrap";
 @import "bootstrap-slider/bootstrap-slider";
 
 body {
-  margin-top: 12px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
 }
+
 
 .form-group {
   .slider.slider-horizontal {
