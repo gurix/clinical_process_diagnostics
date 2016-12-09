@@ -2,4 +2,40 @@ h1.hidden = title(t '.title')
 
 = simple_form_for(@session_rating_scale, url: client_survey_session_rating_scales_path(@client)) do |f|
   = f.association :therapist, collection: @therapists, prompt: t('.please_choose_a_therapist'), label_method: "name_and_email", label: false
+  .bipolar-text
+    .left
+      = t('.relationship.negative')
+    .right
+      = t('.relationship.positive')
+    = f.input :relationship, as: :range, label: false, min: 0, max: 100, step: 1
+  
+  .bipolar-text
+    .left
+      = t('.goals_and_topics.negative')
+    .right
+      = t('.goals_and_topics.positive')
+    = f.input :goals_and_topics, as: :range, label: false, min: 0, max: 100, step: 1
+
+
+  .bipolar-text
+    .left
+      = t('.approach_or_method.negative')
+    .right
+      = t('.approach_or_method.positive')
+    = f.input :approach_or_method, as: :range, label: false, min: 0, max: 100, step: 1
+
+  .bipolar-text
+    .left
+      = t('.overall.negative')
+    .right
+      = t('.overall.positive')
+    = f.input :overall, as: :range, label: false, min: 0, max: 100, step: 1
+
+  .bipolar-text
+    .left
+      = t('.coping.negative')
+    .right
+      = t('.coping.positive')
+    = f.input :coping, as: :range, label: false, min: 0, max: 100, step: 1
+
   = f.submit t('shared.save'), class: 'btn btn-success btn-block'

@@ -10,6 +10,7 @@ module Survey
     def create
       @session_rating_scale = SessionRatingScale.new session_rating_scale_params
       @session_rating_scale.client = @client
+
       if @session_rating_scale.save
         flash[:success] = t('.session_suceessfully_created')
         redirect_to root_path
@@ -29,7 +30,7 @@ module Survey
     end
 
     def session_rating_scale_params
-      params.require(:survey_session_rating_scale).permit(:therapist_id)
+      params.require(:survey_session_rating_scale).permit(:therapist_id, :relationship, :goals_and_topics, :approach_or_method, :overall, :coping)
     end
   end
 end

@@ -31,7 +31,26 @@ body {
   }
 }
 
+.bipolar-text {
+  white-space: initial;
 
+ .left {
+    width: 50%;
+    float: left;
+    padding-bottom: 1em;
+  }
+
+  .right {
+    width: 50%;
+    float: right;
+    text-align: right;
+    padding-bottom: 1em;
+  }
+
+  input.form-control {
+    box-shadow: none;
+  }
+}
 
 label {
   display: block;

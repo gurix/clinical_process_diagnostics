@@ -23,7 +23,23 @@ de:
   survey:
     session_rating_scales:
       new:
-        please_choose_a_therapist: Bitte wählen Sie ihren Therapeuten aus. 
+        please_choose_a_therapist: Bitte wählen Sie ihren Therapeuten aus.
+        relationship:
+          negative: Ich fühle mich nicht verstanden und respektiert.
+          positive: Ich fühle mich verstanden und respektiert.
+        goals_and_topics:
+          negative: Wir arbeiten an Themen die mir nicht wichtig sind.
+          positive: Wir arbeiten an Themen die mir wichtig sind.
+        approach_or_method:
+          negative: Das Vorgehen des Therapeuten / der Therapeutin entspricht mir nicht.
+          positive: Das Vorgehen des Therapeuten / der Therapeutin entspricht mir.
+        overall:
+          negative: Insgesamt bin ich mit der heutigen Sitzung nicht zufrieden.
+          positive: Insgesamt bin ich mit der heutigen Sitzung zufrieden.
+        coping:
+          negative: Ich bin noch nicht bereit das Problem selbst ständig anzugehen
+          positive: Ich bin bereit das Problem selbst ständig anzugehen
+
       create:
         session_suceessfully_created: Ihre Bewertung wurde erfolgreich gepeichert. Besten Dank.
 
