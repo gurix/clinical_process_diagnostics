@@ -8,4 +8,9 @@ Rails.application.routes.draw do
       resources :session_rating_scales
     end
   end
+
+  # Area displaying each therapists performance
+  resources :therapists, only: [:index, :show] do
+    resources :clients, only: :show
+  end
 end

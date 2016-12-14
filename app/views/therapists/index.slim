@@ -1,0 +1,15 @@
+h1.hidden = title t('.title')
+
+table.table
+  tr
+    th= t('.name')
+    th= t('.email')
+    th= t('.statistics')
+  - @therapists.each do |therapist|
+    tr
+      td = therapist.name
+      td = mail_to therapist.email
+      td
+        = link_to t('.amount_of_sessions', sessions: therapist.sessions.size), therapist
+        br
+        = link_to t('.amount_of_clients', clients: therapist.clients.size), therapist

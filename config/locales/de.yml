@@ -8,22 +8,48 @@ de:
     back: Zurück
     ask_for_delete_entry: Wollen Sie diesen Eintrag wirklich löschen?
     error: Die Eingabe konnte nicht gespeichert werden, überprüfen Sie bitte ihre Eingaben.
-    required: "* Pflichtfeld"
+    required: "* bezeichnet Pflichtfeld"
 
   pages:
     index:
-      title: Clinlical Process Diagnostics
+      title: Prozessmessung
       new_client: Meine Sitzung bewerten
   
   clients:
     new:
       title: Sitzung bewerten
       identifier_hint: Die Klienten-Nummer wird ihnen durch Ihren Therapeuten bekannt gegeben.
-  
+    
+    show:
+      relationship: Beziehung
+      goals_and_topics: Ziele und Themen
+      approach_or_method: Vorgehen
+      overall: Insgesammt
+      coping: Bewältigung
+      dates: Zeitpunkte
+      date: Zeitpunkt der Bewertung
+      progress: Fortschritt
+
+  therapists:
+    index:
+      title: Therapeuten
+      name: Name
+      email: E-Mail-Adresse
+      statistics: Statistiken
+      amount_of_sessions: "%{sessions} Sitzungen bewertet"
+      amount_of_clients: "%{clients} Klienten"
+
+    show:
+      name: Name
+      identifier: Identifikationsnummer
+      statistics: Statistiken
+      clients: Klienten
+      amount_of_client_sessions: "%{sessions} Sitzungen bewertet"
+
   survey:
     session_rating_scales:
       new:
-        please_choose_a_therapist: Bitte wählen Sie ihren Therapeuten aus.
+        please_choose_a_therapist: Bitte wählen Sie Ihren Therapeuten aus.
         relationship:
           negative: Ich fühle mich nicht verstanden und respektiert.
           positive: Ich fühle mich verstanden und respektiert.

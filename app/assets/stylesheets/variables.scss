@@ -1,2 +1,9 @@
-$font-size-base: 16px;
-$hr-border: #CCC
+$font-size-base: 20px;
+$hr-border: #CCC;
+$brand-primary: rgb(99, 167, 220);
+$brand-warning: rgb(255, 206, 68);
+$brand-info:    rgb(92, 189, 177);
+$brand-success: rgb(215,218,8);
+$state-success-bg: lighten($brand-success,30%);
+$state-success-text: #000;
+$form-group-margin-bottom: 30px;

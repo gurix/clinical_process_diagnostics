@@ -1,0 +1,91 @@
+h1.hidden = title "Sitzungen von #{@client.name} (#{@client.identifier}) bei #{@therapist.name_and_email}"
+h3 = t('.progress')
+#profile
+  .row
+    .col-xs-12.col-sm-6
+      #relationship.ct-chart.ct-octave
+      .text-center
+        = t('.relationship')
+    .col-xs-12.col-sm-6
+      #goals_and_topics.ct-chart.ct-octave
+      .text-center
+        = t('.goals_and_topics')
+  .row
+    .col-xs-12.col-sm-6.block-center
+      #approach_or_method.ct-chart.ct-octave
+      .text-center
+        = t('.approach_or_method')
+    .col-xs-12.col-sm-6
+      #coping.ct-chart.ct-octave
+      .text-center
+        = t('.coping')
+  .row
+    .col-xs-12.col-sm-6
+      #overall.ct-chart.ct-octave
+      .text-center
+        = t('.overall')
+h3 = t('.dates')
+table.table
+  tr
+    th #
+    th = t('.date')
+  - @session_rating_scale_sessions.each_with_index do |session, index| 
+    tr
+      td 
+        = index + 1
+      td
+        = l(session.created_at)
+
+javascript:
+  options = {
+    high: 100,
+    low: 0,
+    showArea: true,
+    fullWidth: true,
+    chartPadding: {
+      right: 40
+    },
+    axisY: {
+      onlyInteger: true
+    }
+  }
+
+  new Chartist.Line('#relationship', {
+    labels: #{(1..@session_rating_scale_sessions.size).to_a},
+    series: [
+      #{@session_rating_scale_sessions.map &:relationship},
+      #{@session_rating_scale_sessions.map {|session| 90 }}
+    ]
+  }, options);
+
+  new Chartist.Line('#goals_and_topics', {
+    labels: #{(1..@session_rating_scale_sessions.size).to_a},
+    series: [
+      #{@session_rating_scale_sessions.map &:goals_and_topics},
+      #{@session_rating_scale_sessions.map {|session| 90 }}
+    ]
+  }, options);
+
+  new Chartist.Line('#approach_or_method', {
+    labels: #{(1..@session_rating_scale_sessions.size).to_a},
+    series: [
+      #{@session_rating_scale_sessions.map &:approach_or_method},
+      #{@session_rating_scale_sessions.map {|session| 90 }}
+    ]
+  }, options);
+
+  new Chartist.Line('#overall', {
+    labels: #{(1..@session_rating_scale_sessions.size).to_a},
+    series: [
+      #{@session_rating_scale_sessions.map &:overall},
+      #{@session_rating_scale_sessions.map {|session| 90 }}
+    ]
+  }, options);
+
+  new Chartist.Line('#coping', {
+    labels: #{(1..@session_rating_scale_sessions.size).to_a},
+    series: [
+      #{@session_rating_scale_sessions.map &:coping},
+      #{@session_rating_scale_sessions.map {|session| 90 }}
+    ]
+  }, options);

@@ -1,0 +1,21 @@
+#profile {
+  .ct-series-a {
+    line.ct-point, path.ct-line { 
+      stroke: $brand-primary;
+    }
+    
+    path.ct-area {
+      fill: lighten($brand-primary, 10%)
+    }
+  }
+
+  .ct-series-b {
+    line.ct-point, path.ct-area {
+      display: none;
+    }
+    path.ct-line { 
+      stroke: $brand-warning;
+      stroke-width: 1;
+    }
+  } 
+}

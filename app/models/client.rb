@@ -10,4 +10,8 @@ class Client
   validates :name, presence: true, unless: 'identifier.blank?'
 
   has_many :session_rating_scale_sessions, dependent: :destroy, class_name: 'Survey::SessionRatingScale', inverse_of: :client
+
+  def sessions
+    session_rating_scale_sessions
+  end
 end
