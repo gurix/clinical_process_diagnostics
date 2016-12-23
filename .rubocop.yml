@@ -3,6 +3,9 @@ AllCops:
     - Rakefile
     - config.ru
   Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
     - bin/**
     - spec/dummy/config/initializers/secret_token.rb
 Documentation:
