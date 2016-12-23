@@ -1,7 +1,7 @@
 h1.hidden = title(t '.title')
 
 = simple_form_for(@session_rating_scale, url: client_survey_session_rating_scales_path(@client)) do |f|
-  = f.association :therapist, collection: @therapists, prompt: t('.please_choose_a_therapist'), label_method: "name_and_email", label: false
+  = f.association :therapist, collection: @therapists, include_blank: t('.please_choose_a_therapist'), label_method: "name", label: false
   .row
     .col-xs-3
        = t('.relationship.negative')

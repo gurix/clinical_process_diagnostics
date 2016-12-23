@@ -40,4 +40,29 @@ feature 'session rating scale input' do
 
     expect(current_path).to eq root_path
   end
+
+  scenario 'starting a new survey it assigns automatically the last used therapist' do
+    create :therapist, name: 'David Hasselhoff'
+    first_therapist = create :therapist, name: 'Donald Trump'
+    second_therapist = create :therapist, name: 'Hillary Clinton'
+
+    client = create :client
+
+    visit new_client_survey_session_rating_scale_path(client)
+    expect(page).not_to have_select('survey_session_rating_scale_therapist_id', selected: 'David Hasselhoff')
+    expect(page).not_to have_select('survey_session_rating_scale_therapist_id', selected: 'Donald Trump')
+    expect(page).not_to have_select('survey_session_rating_scale_therapist_id', selected: 'Hillary Clinton')
+
+    create :session_rating_scale, client: client, therapist: first_therapist
+
+    visit new_client_survey_session_rating_scale_path(client)
+
+    expect(page).to have_select('survey_session_rating_scale_therapist_id', selected: 'Donald Trump')
+
+    create :session_rating_scale, client: client, therapist: second_therapist
+
+    visit new_client_survey_session_rating_scale_path(client)
+
+    expect(page).to have_select('survey_session_rating_scale_therapist_id', selected: 'Hillary Clinton')
+  end
 end

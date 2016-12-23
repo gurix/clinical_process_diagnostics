@@ -4,7 +4,7 @@ module Survey
     before_action :load_therapists # Loads the list with all available therapists
 
     def new
-      @session_rating_scale = SessionRatingScale.new
+      @session_rating_scale = SessionRatingScale.new(therapist: @client.last_therapist)
     end
 
     def create
