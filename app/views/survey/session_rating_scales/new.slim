@@ -2,42 +2,60 @@ h1.hidden = title(t '.title')
 
 = simple_form_for(@session_rating_scale, url: client_survey_session_rating_scales_path(@client)) do |f|
   = f.association :therapist, collection: @therapists, prompt: t('.please_choose_a_therapist'), label_method: "name_and_email", label: false
-  br
-  .bipolar-text
-    .left
-      = t('.relationship.negative')
-    .right
-      = t('.relationship.positive')
-    = f.input :relationship, as: :range, label: false, min: 0, max: 100, step: 1
-  
-  .bipolar-text
-    .left
+  .row
+    .col-xs-3
+       = t('.relationship.negative')
+    .col-xs-6.text-center
+        .lead= t('.dimensions.relationship')
+    .col-xs-3.text-right
+       = t('.relationship.positive')
+  .row
+    .col-xs-10.col-xs-offset-1
+      = f.input :relationship, as: :range, label: false, min: 0, max: 100, step: 1
+
+  .row
+    .col-xs-3
       = t('.goals_and_topics.negative')
-    .right
+    .col-xs-6.text-center
+        .lead= t('.dimensions.goals_and_topics')
+    .col-xs-3.text-right
       = t('.goals_and_topics.positive')
-    = f.input :goals_and_topics, as: :range, label: false, min: 0, max: 100, step: 1
-
-
-  .bipolar-text
-    .left
+  .row
+    .col-xs-10.col-xs-offset-1
+      = f.input :goals_and_topics, as: :range, label: false, min: 0, max: 100, step: 1
+  .row
+    .col-xs-3
       = t('.approach_or_method.negative')
-    .right
+    .col-xs-6.text-center
+        .lead= t('.dimensions.approach_or_method')
+    .col-xs-3.text-right
       = t('.approach_or_method.positive')
-    = f.input :approach_or_method, as: :range, label: false, min: 0, max: 100, step: 1
-
-  .bipolar-text
-    .left
-      = t('.overall.negative')
-    .right
-      = t('.overall.positive')
-    = f.input :overall, as: :range, label: false, min: 0, max: 100, step: 1
-
-  .bipolar-text
-    .left
-      = t('.coping.negative')
-    .right
-      = t('.coping.positive')
-    = f.input :coping, as: :range, label: false, min: 0, max: 100, step: 1
+  .row
+    .col-xs-10.col-xs-offset-1
+      = f.input :approach_or_method, as: :range, label: false, min: 0, max: 100, step: 1
+    
+  .row
+    .col-xs-3
+       = t('.overall.negative')
+    .col-xs-6.text-center
+        .lead= t('.dimensions.overall')
+    .col-xs-3.text-right
+       = t('.overall.positive')
+  .row
+    .col-xs-10.col-xs-offset-1
+      = f.input :overall, as: :range, label: false, min: 0, max: 100, step: 1
+  
+  .row
+    .col-xs-3
+       = t('.coping.negative')
+    .col-xs-6.text-center
+        .lead= t('.dimensions.coping')
+    .col-xs-3.text-right
+       = t('.coping.positive')
+  .row
+    .col-xs-10.col-xs-offset-1
+      = f.input :coping, as: :range, label: false, min: 0, max: 100, step: 1
+ 
   .form-group
     br
     = f.submit t('shared.save'), class: 'btn btn-primary btn-block'
