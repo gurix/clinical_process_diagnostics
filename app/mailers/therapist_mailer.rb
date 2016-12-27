@@ -11,4 +11,11 @@ class TherapistMailer < ActionMailer::Base
 
     mail to: @therapist.email, subject: I18n.translate('emails.reset_token.subject', name: @therapist.name)
   end
+
+  def new_client_session(therapist_id, client_id)
+    @client = Client.find(client_id)
+    @therapist = Therapist.find(therapist_id)
+
+    mail to: @therapist.email, subject: I18n.translate('emails.new_client_session.subject', identifier: @client.identifier)
+  end
 end

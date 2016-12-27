@@ -13,6 +13,8 @@ de:
   emails:
     reset_token:
       subject: Zugriffsinformationen für %{name}
+    new_client_session:
+      subject: "Neue Bewertung von %{identifier}"
   
   reset_therapist_tokens:
     new:
