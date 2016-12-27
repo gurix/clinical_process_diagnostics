@@ -1,6 +1,7 @@
 class Client
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Tokenable
 
   field :identifier, type: String
   field :name, type: String

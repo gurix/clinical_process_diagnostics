@@ -12,4 +12,4 @@ table.table
       td = client.name
       td = client.identifier
       td
-        = link_to t('.amount_of_client_sessions', sessions: client.sessions.where(therapist: @therapist).size), [@therapist, client]
+        = link_to t('.amount_of_client_sessions', sessions: client.sessions.where(therapist: @therapist).size), therapist_client_path(@therapist.token, client.token)

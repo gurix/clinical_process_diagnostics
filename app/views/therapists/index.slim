@@ -10,6 +10,6 @@ table.table
       td = therapist.name
       td = mail_to therapist.email
       td
-        = link_to t('.amount_of_sessions', sessions: therapist.sessions.size), therapist
+        = link_to t('.amount_of_sessions', sessions: therapist.sessions.size), therapist_path(therapist.token)
         br
-        = link_to t('.amount_of_clients', clients: therapist.clients.size), therapist
+        = link_to t('.amount_of_clients', clients: therapist.clients.size), therapist_path(therapist.token)

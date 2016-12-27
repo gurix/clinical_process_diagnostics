@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   # Area displaying each therapists performance
-  resources :therapists, only: [:index, :show] do
-    resources :clients, only: :show
+  resources :therapists, only: [:index, :show], param: :token do
+    resources :clients, only: :show, param: :token
   end
 end

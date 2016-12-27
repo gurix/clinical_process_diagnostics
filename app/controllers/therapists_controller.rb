@@ -4,6 +4,6 @@ class TherapistsController < ApplicationController
   end
 
   def show
-    @therapist = Therapist.find(params[:id])
+    @therapist = Therapist.find_by(token: params[:token])
   end
 end

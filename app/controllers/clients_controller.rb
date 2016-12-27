@@ -2,8 +2,8 @@ class ClientsController < ApplicationController
   before_action :find_or_initialize_client, only: :create
 
   def show
-    @client = Client.find(params[:id])
-    @therapist = Therapist.find(params[:therapist_id])
+    @client = Client.find_by(token: params[:token])
+    @therapist = Therapist.find_by(token: params[:therapist_token])
     @session_rating_scale_sessions = @client.session_rating_scale_sessions.where(therapist: @therapist).asc(:create_at)
   end
 
