@@ -22,6 +22,9 @@ gem 'therubyracer', platforms: :ruby
 # Library that generates fake data.
 gem 'faker'
 
+# This gem hooks up your Rails application with Roadie to help you generate HTML emails.
+gem 'roadie-rails', '~> 1.0'
+
 # A fixtures replacement with a straightforward definition syntax
 gem "factory_girl_rails", "~> 4.0"
 

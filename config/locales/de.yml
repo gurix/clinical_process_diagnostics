@@ -9,7 +9,20 @@ de:
     ask_for_delete_entry: Wollen Sie diesen Eintrag wirklich löschen?
     error: Die Eingabe konnte nicht gespeichert werden, überprüfen Sie bitte ihre Eingaben.
     required: "* bezeichnet Pflichtfeld"
-
+  
+  emails:
+    reset_token:
+      subject: Zugriffsinformationen für %{name}
+  
+  reset_therapist_tokens:
+    new:
+      instructions: Geben Sie hier Ihre E-Mail-Adresse ein, die sie als Therapeut hinterlegt haben. Sie bekommen Ihre aktuellen Zugriffsinformationen umgehend per E-Mail zugestellt.
+      title: Zugriffsinformationen zurücksetzen
+      email: E-Mail 
+      send: Zugriffsinformationen zusenden
+    create:
+      email_not_found: Die E-Mail-Adresse %{email} existiert nicht.
+      email_sent: Ihre Zugriffsinformationen werden Ihnen in Kürze per E-Mail zugestellt.
   pages:
     index:
       title: Prozessmessung
@@ -19,8 +32,10 @@ de:
     new:
       title: Sitzung bewerten
       identifier_hint: Die Klienten-Nummer wird ihnen durch Ihren Therapeuten bekannt gegeben.
+      access_for_therapists: Zugang für Therapeuten
     
     show:
+      other_clients: Liste aller Klienten
       relationship: Beziehung
       goals_and_topics: Ziele und Themen
       approach_or_method: Vorgehen

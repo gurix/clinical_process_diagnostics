@@ -1,4 +1,5 @@
 h1.hidden = title "Sitzungen von #{@client.name} (#{@client.identifier}) bei #{@therapist.name}"
+
 #profile
   .row
     .col-xs-12
@@ -32,7 +33,7 @@ table.table
         = index + 1
       td
         = l(session.created_at)
-
+= link_to t('.other_clients'), therapist_path(@therapist.token), class: 'hidden-print'
 javascript:
   function chart_headstand() {
     $('.headstand').css('width', $('.ct-chart').height());

@@ -8,3 +8,4 @@ h1.hidden = title t('.title')
         = f.input :identifier, as: :hidden
         = f.hidden_field :ask_for_name, value: true
       = f.submit t('shared.next'), class: 'btn btn-primary btn-block'
+= link_to t('.access_for_therapists'), new_reset_therapist_token_path, class: 'access_for_therapists'
