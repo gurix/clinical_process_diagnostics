@@ -18,4 +18,19 @@
       stroke-width: 1;
     }
   } 
+  .ct-label {
+    font-size: 1rem;
+  }
+
+  .headstand {
+    transform: rotate(-90deg);
+    transform-origin: left top 0;
+    font-size: 1.5vw;
+    margin: -5px;
+    position: absolute;
+    bottom: 0px;
+    // border-top: 1px solid red;
+    // border-bottom: 1px solid green;
+    text-align: center;
+  }
 }

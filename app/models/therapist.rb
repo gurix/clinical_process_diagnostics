@@ -11,10 +11,6 @@ class Therapist
 
   has_many :session_rating_scale_sessions, dependent: :destroy, class_name: 'Survey::SessionRatingScale', inverse_of: :therapist
 
-  def name_and_email
-    "#{name} (#{email})"
-  end
-
   def sessions
     session_rating_scale_sessions
   end

@@ -24,11 +24,9 @@ de:
       relationship: Beziehung
       goals_and_topics: Ziele und Themen
       approach_or_method: Vorgehen
-      overall: Insgesammt
+      overall: Insgesamt
       coping: Bewältigung
-      dates: Zeitpunkte
       date: Zeitpunkt der Bewertung
-      progress: Fortschritt
 
   therapists:
     index:
@@ -55,7 +53,7 @@ de:
           relationship: Beziehung
           goals_and_topics: Ziele und Themen
           approach_or_method: Vorgehen
-          overall: Insgesammt
+          overall: Insgesamt
           coping: Bewältigung
         relationship:
           negative: Ich fühle mich nicht verstanden und respektiert.
