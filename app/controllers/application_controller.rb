@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 
   def expire_tokens
     Therapist.each do |therapist|
-      next if therapist.token_generated_at >= TOKEN_TIMEOUT.ago
+      next if therapist.token_generated_at && therapist.token_generated_at >= TOKEN_TIMEOUT.ago
       therapist.reset_token
       therapist.save
     end
