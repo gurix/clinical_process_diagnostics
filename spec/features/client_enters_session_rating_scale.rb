@@ -36,6 +36,8 @@ feature 'session rating scale input' do
 
     click_button 'Speichern'
 
+    expect { click_button 'Speichern' }.to change { ActionMailer::Base.deliveries.count }.by(1)
+
     expect(page).to have_content 'Ihre Bewertung wurde erfolgreich gepeichert. Besten Dank.'
 
     expect(current_path).to eq root_path

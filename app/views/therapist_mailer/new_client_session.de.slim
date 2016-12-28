@@ -4,6 +4,6 @@ p #{@client.name} (#{@client.identifier}) hat soeben seine Sitzung bewertet. Unt
 p Unter folgender Adresse haben Sie Zufgriff auf die Statistik all ihrer Klienten:
 = link_to therapist_url(@therapist.token), therapist_url(@therapist.token)
 p 
-  i Aus Sicherheitsgründen verfällt dieser Link nach ein paar Aufrufen. Sie können sich aber jederzeit Ihren Zufgriff wiederherstellen unter:
+  i Aus Sicherheitsgründen verfällt dieser Link nach einer gewissen Zeit. Sie können sich aber jederzeit Ihren Zufgriff wiederherstellen unter:
   br
   = link_to new_reset_therapist_token_url, new_reset_therapist_token_url

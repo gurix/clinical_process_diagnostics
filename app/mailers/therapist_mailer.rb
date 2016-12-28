@@ -1,7 +1,7 @@
 class TherapistMailer < ActionMailer::Base
   include Roadie::Rails::Automatic
 
-  default from: 'from@example.com'
+  default from: ENV['FROM_EMAIL']
   layout 'mailer'
 
   def reset_token(therapist_id)

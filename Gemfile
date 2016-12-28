@@ -31,6 +31,9 @@ gem "factory_girl_rails", "~> 4.0"
 # Collecting Locale data for Ruby on Rails
 gem 'rails-i18n'
 
+# Rails app configuration using ENV
+gem 'dotenv-rails'
+
 # Simple Form aims to be as flexible as possible while helping you with powerful components to create your forms.
 gem 'simple_form'
 

@@ -3,6 +3,8 @@ module Survey
     include Mongoid::Document
     include Mongoid::Timestamps
 
+    after_create :send_email
+
     field :version, type: Integer, default: 4
 
     validates :version, presence: true
@@ -22,5 +24,9 @@ module Survey
     validates :approach_or_method, presence: true
     validates :overall,            presence: true
     validates :coping,             presence: true
+
+    def send_email
+      TherapistMailer.new_client_session(therapist.id, client.id).deliver
+    end
   end
 end
