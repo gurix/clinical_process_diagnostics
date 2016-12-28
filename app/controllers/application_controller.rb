@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::Base
+  TOKEN_TIMEOUT = 1.week
+
+  before_action :expire_tokens
+
   protect_from_forgery with: :exception
 
   INPUT_TIMEOUT = 2.seconds # We estimate that a user needs more then x seconds to enter some informations
@@ -13,5 +17,13 @@ class ApplicationController < ActionController::Base
     raise 'session[:form_timestamp] not set' unless session[:form_timestamp]
     duration = Time.now - session[:form_timestamp].to_time
     duration < INPUT_TIMEOUT
+  end
+
+  def expire_tokens
+    Therapist.each do |therapist|
+      next if therapist.token_generated_at >= TOKEN_TIMEOUT.ago
+      therapist.reset_token
+      therapist.save
+    end
   end
 end

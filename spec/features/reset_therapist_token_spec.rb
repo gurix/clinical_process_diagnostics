@@ -22,4 +22,19 @@ feature 'reset therapist token' do
 
     expect(page).to have_content 'Ihre Zugriffsinformationen werden Ihnen in Kürze per E-Mail zugestellt.'
   end
+
+  scenario 'old tokens expires after a week' do
+    expired = Therapist.create(name: 'Sigmund Freud', email: 'sigmund@sigmund-freud.at')
+    expired_token = expired.token
+    expired.update_attribute(:token_generated_at, 2.weeks.ago)
+
+    not_expired = Therapist.create(name: 'Saul Goodman', email: 'me@bettercallsaul.goodman')
+    not_expired_token = not_expired.token
+    not_expired.update_attribute(:token_generated_at, 3.days.ago)
+
+    visit root_path
+
+    expect(expired.reload.token).not_to eq expired_token
+    expect(not_expired.reload.token).to eq not_expired_token
+  end
 end

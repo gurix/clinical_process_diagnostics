@@ -2,15 +2,18 @@ module Tokenable
   extend ActiveSupport::Concern
 
   included do
-    field :token, type: String
+    field :token,              type: String
+    field :token_generated_at, type: DateTime
 
     validates :token, uniqueness: true
+    validates :token_generated_at, presence: true, if: :token?
 
     before_create :reset_token
   end
 
   def reset_token
     self.token = generate_token(4) until unique_token?
+    self.token_generated_at = DateTime.now
   end
 
   private
