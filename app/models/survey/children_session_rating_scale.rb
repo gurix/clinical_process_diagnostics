@@ -1,6 +1,6 @@
 module Survey
-  class SessionRatingScale < Session
-    field :version, type: Integer, default: 4
+  class ChildrenSessionRatingScale < Session
+    field :version, type: Integer, default: 2
 
     validates :version, presence: true
 
