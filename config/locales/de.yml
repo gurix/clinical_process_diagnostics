@@ -9,6 +9,7 @@ de:
     ask_for_delete_entry: Wollen Sie diesen Eintrag wirklich löschen?
     error: Die Eingabe konnte nicht gespeichert werden, überprüfen Sie bitte ihre Eingaben.
     required: "* bezeichnet Pflichtfeld"
+    staging_warning: Sie befinden sich auf einer Testumgebung. Als Klient sollten Sie diese Warnung nicht sehen, melden Sie sich bei Ihrem Therapeuten.
   
   emails:
     reset_token:

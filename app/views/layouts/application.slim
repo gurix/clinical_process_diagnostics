@@ -13,3 +13,6 @@ html
     .container
       = flash_messages
       = yield
+    - unless Rails.env.production?
+      footer
+        = t('shared.staging_warning')

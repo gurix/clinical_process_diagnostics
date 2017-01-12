@@ -10,6 +10,7 @@
 
 body {
   background-color: #fff;
+  padding-bottom: 50px;
 }
 
 header {
@@ -57,5 +58,18 @@ a.access_for_therapists {
   right: 0px;
   padding: 5px;
   font-size: 0.8em;
-  color: #DEDEDE
+  color: #DEDEDE;
+  z-index: 12;
+  padding: 12px;
+}
+
+footer {
+    text-align: center;
+    background: $brand-danger;
+    padding: 12px;
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #FFF;
 }
