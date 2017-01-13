@@ -35,8 +35,8 @@ de:
   clients:
     edit:
       title: Meine Einstellungen anpassen
-      please_choose_a_therapist: Bitte wählen Sie Ihren Therapeuten aus.
-      info_title: Diese Einstellungen betreffen Klient-Nummer
+      please_choose_a_therapist: Bitte wählen Sie Ihren Therapeuten aus
+      info_title: Diese Einstellungen betreffen die Klienten-Nummer
       info_body: Bitte überprüfen Sie die Klienten-Nummer nochmals, bevor Sie die Anpassungen durchführen.
       info_exit: Bitte melden Sie den Klienten neu an, wenn  die  Klienten-Nummer falsch ist.
     new:
