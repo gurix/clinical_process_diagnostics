@@ -11,8 +11,9 @@ class Therapist
   validates :name, presence: true
 
   has_many :sessions, dependent: :destroy, inverse_of: :therapist, class_name: 'Survey::Session'
+  has_many :clients, inverse_of: :therapist
 
-  def clients
+  def all_clients
     sessions.map(&:client).uniq.sort_by(&:name)
   end
 end

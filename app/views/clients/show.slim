@@ -27,7 +27,7 @@ table.table
   tr
     th #
     th = t('.date')
-  - @session_rating_scale_sessions.each_with_index do |session, index| 
+  - @sessions.each_with_index do |session, index| 
     tr
       td 
         = index + 1
@@ -58,41 +58,41 @@ javascript:
   }
 
   new Chartist.Line('#relationship', {
-    labels: #{(1..@session_rating_scale_sessions.size).to_a},
+    labels: #{(1..@sessions.size).to_a},
     series: [
-      #{@session_rating_scale_sessions.map &:relationship},
-      #{@session_rating_scale_sessions.map {|session| 90 }}
+      #{@sessions.map &:relationship},
+      #{@sessions.map {|session| 90 }}
     ]
   }, options);
 
   new Chartist.Line('#goals_and_topics', {
-    labels: #{(1..@session_rating_scale_sessions.size).to_a},
+    labels: #{(1..@sessions.size).to_a},
     series: [
-      #{@session_rating_scale_sessions.map &:goals_and_topics},
-      #{@session_rating_scale_sessions.map {|session| 90 }}
+      #{@sessions.map &:goals_and_topics},
+      #{@sessions.map {|session| 90 }}
     ]
   }, options);
 
   new Chartist.Line('#approach_or_method', {
-    labels: #{(1..@session_rating_scale_sessions.size).to_a},
+    labels: #{(1..@sessions.size).to_a},
     series: [
-      #{@session_rating_scale_sessions.map &:approach_or_method},
-      #{@session_rating_scale_sessions.map {|session| 90 }}
+      #{@sessions.map &:approach_or_method},
+      #{@sessions.map {|session| 90 }}
     ]
   }, options);
 
   new Chartist.Line('#overall', {
-    labels: #{(1..@session_rating_scale_sessions.size).to_a},
+    labels: #{(1..@sessions.size).to_a},
     series: [
-      #{@session_rating_scale_sessions.map &:overall},
-      #{@session_rating_scale_sessions.map {|session| 90 }}
+      #{@sessions.map &:overall},
+      #{@sessions.map {|session| 90 }}
     ]
   }, options);
 
   new Chartist.Line('#coping', {
-    labels: #{(1..@session_rating_scale_sessions.size).to_a},
+    labels: #{(1..@sessions.size).to_a},
     series: [
-      #{@session_rating_scale_sessions.map &:coping},
-      #{@session_rating_scale_sessions.map {|session| 90 }}
+      #{@sessions.map &:coping},
+      #{@sessions.map {|session| 90 }}
     ]
   }, options);

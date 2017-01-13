@@ -63,6 +63,16 @@ a.access_for_therapists {
   z-index: 12;
   padding: 12px;
 }
+.header_right {
+  min-height: 69px;
+  text-align: right;
+
+  a {
+    display: block;
+    padding-top: 16px;
+    color: #FFF;
+  }
+} 
 
 footer {
     text-align: center;

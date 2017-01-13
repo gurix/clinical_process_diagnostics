@@ -1,0 +1,58 @@
+h1.hidden = title(t '.title')
+
+.row
+  .col-xs-3
+     = t('.relationship.negative')
+  .col-xs-6.text-center
+    .caption= t('.dimensions.relationship')
+  .col-xs-3.text-right
+    = t('.relationship.positive')
+.row
+  .col-xs-10.col-xs-offset-1
+    = f.input :relationship, as: :range, label: false, min: 0, max: 100, step: 1
+
+.row
+  .col-xs-3
+    = t('.goals_and_topics.negative')
+  .col-xs-6.text-center
+      .caption= t('.dimensions.goals_and_topics')
+  .col-xs-3.text-right
+    = t('.goals_and_topics.positive')
+.row
+  .col-xs-10.col-xs-offset-1
+    = f.input :goals_and_topics, as: :range, label: false, min: 0, max: 100, step: 1
+.row
+  .col-xs-3
+    = t('.approach_or_method.negative')
+  .col-xs-6.text-center
+      .caption= t('.dimensions.approach_or_method')
+  .col-xs-3.text-right
+    = t('.approach_or_method.positive')
+.row
+  .col-xs-10.col-xs-offset-1
+    = f.input :approach_or_method, as: :range, label: false, min: 0, max: 100, step: 1
+  
+.row
+  .col-xs-3
+    = t('.overall.negative')
+  .col-xs-6.text-center
+    .caption= t('.dimensions.overall')
+  .col-xs-3.text-right
+    = t('.overall.positive')
+.row
+  .col-xs-10.col-xs-offset-1
+    = f.input :overall, as: :range, label: false, min: 0, max: 100, step: 1
+
+.row
+  .col-xs-3
+    = t('.coping.negative')
+  .col-xs-6.text-center
+    .caption= t('.dimensions.coping')
+  .col-xs-3.text-right
+    = t('.coping.positive')
+.row
+  .col-xs-10.col-xs-offset-1
+    = f.input :coping, as: :range, label: false, min: 0, max: 100, step: 1
+.form-group
+  br
+  = f.submit t('.save'), class: 'btn btn-primary btn-block'

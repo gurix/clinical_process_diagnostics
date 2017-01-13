@@ -5,10 +5,15 @@ h1.hidden = title t('.title')
       = f.input :identifier, hint: t('.identifier_hint'), required: false, input_html: { autocapitalize: 'none' } if @client.identifier.blank?
       - if @client.identifier.present?
         = f.association :therapist, collection: @therapists, include_blank: t('.please_choose_a_therapist'), label_method: "name", label: false
-        = f.input :name, required: false
         = f.input :class_of_age, as: :radio_buttons, collection: t('clients.class_of_age').map{ |x| [x.first, raw(x.last)]}, label_method: :last, value_method: :first, required: false
-        = f.input :identifier, as: :hidden
-        = f.hidden_field :second_step, value: true
       = f.submit t('shared.next'), class: 'btn btn-primary btn-block'
-- if @client.identifier.blank?
-  = link_to t('.access_for_therapists'), new_reset_therapist_token_path, class: 'access_for_therapists'
+br
+.row
+  .col-xs-12.col-md-6.col-md-offset-3
+    .alert.alert-info
+      | #{t('.info_title')}  
+      b #{@client.identifier}.  
+      | #{t('.info_body')}  
+      = link_to t('.info_exit'), root_path
+      
+    

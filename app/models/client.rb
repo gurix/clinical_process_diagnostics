@@ -3,16 +3,38 @@ class Client
   include Mongoid::Timestamps
   include Tokenable
 
-  field :identifier, type: String
-  field :name, type: String
+  field :identifier,    type: String
+  field :name,          type: String
+  field :class_of_age,  type: String
 
   validates :identifier, presence: true
   validates :identifier, uniqueness: true
+  validates :class_of_age, presence: true
   validates :name, presence: true, unless: 'identifier.blank?'
 
   has_many :sessions, dependent: :destroy, inverse_of: :client, class_name: 'Survey::Session'
+  belongs_to :therapist, inverse_of: :clients
+
+  attr_accessor :second_step
+
+  def last_session
+    sessions.asc(:created_at).last
+  end
 
   def last_therapist
-    sessions.last.therapist if sessions.any?
+    last_session.therapist if last_session
+  end
+
+  def last_session_type
+    last_session ? last_session.class : session_type_by_age
+  end
+
+  def session_type_by_age
+    case class_of_age
+    when 'child'
+      Survey::ChildrenSessionRatingScale
+    else
+      Survey::SessionRatingScale
+    end
   end
 end

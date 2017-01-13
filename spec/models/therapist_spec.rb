@@ -7,6 +7,7 @@ describe Therapist do
   it { is_expected.to validate_uniqueness_of(:token) }
   it { is_expected.to validate_presence_of(:token_generated_at) }
   it { is_expected.to have_many(:sessions).with_dependent(:destroy).as_inverse_of(:therapist) }
+  it { is_expected.to have_many(:clients).as_inverse_of(:therapist) }
 
   it 'generates a view token automatically' do
     subject = create :therapist

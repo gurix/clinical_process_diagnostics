@@ -9,6 +9,7 @@ de:
     ask_for_delete_entry: Wollen Sie diesen Eintrag wirklich löschen?
     error: Die Eingabe konnte nicht gespeichert werden, überprüfen Sie bitte ihre Eingaben.
     required: "* bezeichnet Pflichtfeld"
+    unknown: Unbekannt
     staging_warning: Sie befinden sich auf einer Testumgebung. Als Klient sollten Sie diese Warnung nicht sehen, melden Sie sich bei Ihrem Therapeuten.
   
   emails:
@@ -32,10 +33,17 @@ de:
       new_client: Meine Sitzung bewerten
   
   clients:
+    edit:
+      title: Meine Einstellungen anpassen
+      please_choose_a_therapist: Bitte wählen Sie Ihren Therapeuten aus.
+      info_title: Diese Einstellungen betreffen Klient-Nummer
+      info_body: Bitte überprüfen Sie die Klienten-Nummer nochmals, bevor Sie die Anpassungen durchführen.
+      info_exit: Bitte melden Sie den Klienten neu an, wenn  die  Klienten-Nummer falsch ist.
     new:
       title: Sitzung bewerten
       identifier_hint: Die Klienten-Nummer wird ihnen durch Ihren Therapeuten bekannt gegeben.
       access_for_therapists: Zugang für Therapeuten
+      please_choose_a_therapist: Bitte wählen Sie Ihren Therapeuten aus.
     
     show:
       other_clients: Liste aller Klienten
@@ -45,6 +53,10 @@ de:
       overall: Insgesamt
       coping: Bewältigung
       date: Zeitpunkt der Bewertung
+    
+    class_of_age:
+      child: Kind / Jugendlich
+      adult: Erwachsen
 
   therapists:
     index:
@@ -63,10 +75,13 @@ de:
       amount_of_client_sessions: "%{sessions} Sitzungen bewertet"
 
   survey:
-    session_rating_scales:
+    sessions: 
       new:
+        therapist: "Der Therapeut der heutigen Sitzung ist %{name}"
+
+      session_rating_scale:
         title: Bitte bewerten Sie die heutige Sitzung
-        please_choose_a_therapist: Bitte wählen Sie Ihren Therapeuten aus.
+        save: Abschliessen
         dimensions:
           relationship: Beziehung
           goals_and_topics: Ziele und Themen
@@ -88,6 +103,31 @@ de:
         coping:
           negative: Ich bin noch nicht bereit das Problem selbstständig anzugehen.
           positive: Ich bin bereit das Problem selbstständig anzugehen.
+      
+      children_session_rating_scale:
+        title: Wie war unsere Sitzung heute?
+        save: Ich bin fertig!
+        dimensions:
+          relationship: Beziehung
+          goals_and_topics: Ziele und Themen
+          approach_or_method: Vorgehen
+          overall: Insgesamt
+          coping: Bewältigung
+        relationship:
+          negative: Ich habe mich mit dem Therapeut nicht wohlgefühlt.
+          positive: Ich habe mich mit dem Therapeut wohlgefühlt.
+        goals_and_topics:
+          negative: Was wir gemacht haben war nicht wichtig für mich.
+          positive: Was wir gemacht haben war wichtig für mich.
+        approach_or_method:
+          negative: Wie wir heute gearbeitet haben war nicht hilfreich.
+          positive: Wie wir heute gearbeitet haben war hilfreich.
+        overall:
+          negative: Ich fand das heutige Gespräch über alles gesehen schlecht.
+          positive: Ich fand das heutige Gespräch über alles gesehen gut.
+        coping:
+          negative: Ich kann meine Probleme nicht selbstständig lösen.
+          positive: Ich kann meine Probleme selbstständig lösen.
 
       create:
         session_suceessfully_created: Ihre Bewertung wurde erfolgreich gepeichert. Besten Dank.
@@ -97,3 +137,4 @@ de:
         client:
           identifier: Bitte geben Sie ihre Klienten-Nummer an.
           name: Bitte geben Sie ihren Namen an.
+          class_of_age: Bitte geben Sie ihre Alterskategorie an
