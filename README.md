@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/gurix/clinical_process_diagnostics?branch=master)](https://travis-ci.org/gurix/clinical_process_diagnostics)
+[![Build Status](https://travis-ci.org/gurix/clinical_process_diagnostics.svg?branch=master)](https://travis-ci.org/gurix/clinical_process_diagnostics)
 [![Code Climate](https://codeclimate.com/github/gurix/clinical_process_diagnostics.png)](https://codeclimate.com/github/gurix/clinical_process_diagnostics)
 
 # Clinical Process Diagnostics
