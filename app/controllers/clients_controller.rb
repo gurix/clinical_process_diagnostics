@@ -39,7 +39,7 @@ class ClientsController < ApplicationController
 
   # Set the path depending on kind of survey used for last survey
   def new_client_session_path
-    "/clients/#{@client.id}/#{@client.last_session_type.name.tableize}/new"
+    "/clients/#{@client.id}/#{@client.session_type_by_age.name.tableize}/new"
   end
 
   def load_therapists

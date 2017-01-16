@@ -25,10 +25,6 @@ class Client
     last_session.therapist if last_session
   end
 
-  def last_session_type
-    last_session ? last_session.class : session_type_by_age
-  end
-
   def session_type_by_age
     case class_of_age
     when 'child'

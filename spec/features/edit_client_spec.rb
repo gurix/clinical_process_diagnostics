@@ -15,8 +15,16 @@ feature 'edit client' do
 
     click_button 'Weiter'
 
-    expect(current_path).to eq new_client_survey_children_session_rating_scale_path(Client.last)
+    expect(current_path).to eq new_client_survey_children_session_rating_scale_path(client)
 
     expect(page).to have_content 'Dr. Paul Weston'
+
+    visit edit_client_path(client)
+
+    choose 'Erwachsen'
+
+    click_button 'Weiter'
+
+    expect(current_path).to eq new_client_survey_session_rating_scale_path(client)
   end
 end

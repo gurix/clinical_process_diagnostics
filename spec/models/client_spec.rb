@@ -11,8 +11,16 @@ describe Client do
   it { is_expected.to belong_to(:therapist).as_inverse_of(:clients) }
 
   it 'generates a view token automatically' do
-    subject = create :client, therapist: create(:therapist)
-    expect(subject.token).not_to be_empty
-    expect(subject.token_generated_at).to be < DateTime.now
+    session = create :client, therapist: create(:therapist)
+    expect(session.token).not_to be_empty
+    expect(session.token_generated_at).to be < DateTime.now
+  end
+
+  it 'returns the session type depnding on the class of age' do
+    subject.class_of_age = 'adult'
+    expect(subject.session_type_by_age).to eq Survey::SessionRatingScale
+
+    subject.class_of_age = 'child'
+    expect(subject.session_type_by_age).to eq Survey::ChildrenSessionRatingScale
   end
 end
