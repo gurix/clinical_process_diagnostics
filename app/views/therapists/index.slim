@@ -1,10 +1,14 @@
 h1.hidden = title t('.title')
 
+= content_for :header_right do
+  = link_to t('.new'), new_therapist_path
+
 table.table
   tr
     th= t('.name')
     th= t('.email')
     th= t('.statistics')
+    th
   - @therapists.each do |therapist|
     tr
       td = therapist.name
@@ -13,3 +17,5 @@ table.table
         = link_to t('.amount_of_sessions', sessions: therapist.sessions.size), therapist_path(therapist.token)
         br
         = link_to t('.amount_of_clients', clients: therapist.clients.size), therapist_path(therapist.token)
+      td
+        = link_to t('.edit'), edit_therapist_path(therapist)

@@ -70,6 +70,23 @@ de:
       adult: Erwachsen
 
   therapists:
+    new:
+      title: Therapeut erfassen
+    
+    edit:
+      title: Therapeut beabeiten
+      ask_for_delete: Wollen Sie diesen Therapeut wirkilich löschen?
+      delete: Therapeut löschen
+
+    destroy:
+      deleted: Therapeut wurde gelöscht
+    
+    update:
+      updated: Therapeut wurde angepasst
+    
+    create:
+      created: Therapeut wurde erstellt.
+    
     index:
       title: Therapeuten
       name: Name
@@ -77,6 +94,8 @@ de:
       statistics: Statistiken
       amount_of_sessions: "%{sessions} Sitzungen bewertet"
       amount_of_clients: "%{clients} Klienten"
+      edit: Bearbeiten
+      new: Therapeut erfassen
 
     show:
       logout: Zurück zur Startseite
@@ -136,6 +155,8 @@ de:
 
   mongoid:
      attributes:
+        therapist:
+          email: E-Mail
         client:
           identifier: Bitte geben Sie ihre Klienten-Nummer an.
           name: Bitte geben Sie ihren Namen an.

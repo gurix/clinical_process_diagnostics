@@ -1,0 +1,6 @@
+h1.hidden = title t('.title')
+
+= content_for :header_right do
+  = link_to t('.delete'), therapist_path(@therapist), method: :delete,  data: { confirm: t('.ask_for_delete') }, class: 'link-danger'
+
+= render 'form'

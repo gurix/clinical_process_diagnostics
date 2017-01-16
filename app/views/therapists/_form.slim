@@ -1,0 +1,5 @@
+= simple_form_for(@therapist) do |f|
+  = f.input :name
+  = f.input :email, as: :email
+  = f.submit t('shared.save'), class: 'btn btn-primary'
+p = t('shared.required')
