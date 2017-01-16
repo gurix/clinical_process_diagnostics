@@ -13,14 +13,14 @@ feature 'session rating scale input' do
 
     expect(page).to_not have_content 'Bitte geben Sie ihre Klienten-Nummer an'
 
-    expect(page).to have_content 'Bitte geben Sie ihren Namen an'
+    expect(page).to have_content 'Bitte geben Sie ihren Namen und Vornamen an'
     expect(page).to_not have_content 'muss ausgefüllt werden'
 
     click_button 'Weiter'
 
     expect(page).to have_content 'muss ausgefüllt werden'
 
-    fill_in 'Bitte geben Sie ihren Namen an.', with: 'Hanf Ueli'
+    fill_in 'Bitte geben Sie ihren Namen und Vornamen an.', with: 'Hanf Ueli'
     select 'Dr. Paul Weston', from: 'client_therapist_id'
 
     choose 'Kind / Jugendlich'

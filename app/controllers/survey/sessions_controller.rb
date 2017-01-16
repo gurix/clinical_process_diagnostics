@@ -30,11 +30,12 @@ module Survey
     end
 
     def type
-      Survey.const_get(params[:type]).included_modules.include?(Mongoid::Document) ? params[:type] : 'Survey::Session'
+      type_class = [Survey::SessionRatingScale, Survey::ChildrenSessionRatingScale].find { |x| x.name == params[:type] }
+      type_class || 'Survey::Session'
     end
 
     def type_class
-      type.constantize
+      type
     end
 
     def load_client
@@ -46,7 +47,8 @@ module Survey
     end
 
     def session_params
-      params.require("survey_#{type.demodulize.underscore}").permit(:therapist_id, :relationship, :goals_and_topics, :approach_or_method, :overall, :coping)
+      required_param = "survey_#{type.name.demodulize.underscore}"
+      params.require(required_param).permit(:therapist_id, :relationship, :goals_and_topics, :approach_or_method, :overall, :coping)
     end
   end
 end
