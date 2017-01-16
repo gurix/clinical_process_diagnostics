@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+  - 2.3
+
+services:
+  - mongodb
+
+cache: bundler
+sudo: false
