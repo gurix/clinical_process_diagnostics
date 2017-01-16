@@ -1,0 +1,63 @@
+.row
+  .col-xs-12
+    #srs_relationship.ct-chart.ct-double-octave
+      .headstand = t('.relationship')
+.row    
+  .col-xs-12
+    #srs_goals_and_topics.ct-chart.ct-double-octave 
+      .headstand = t('.goals_and_topics')
+.row
+  .col-xs-12
+    #srs_approach_or_method.ct-chart.ct-double-octave
+      .headstand = t('.approach_or_method')
+.row
+  .col-xs-12
+    #srs_coping.ct-chart.ct-double-octave
+    .headstand
+      = t('.coping')
+.row
+  .col-xs-12
+    #srs_overall.ct-chart.ct-double-octave
+    .headstand
+      = t('.overall')
+
+javascript:
+  new Chartist.Line('#srs_relationship', {
+    labels: #{(1..sessions.size).to_a},
+    series: [
+      #{sessions.map &:relationship},
+      #{sessions.map {|session| 90 }}
+    ]
+  }, options);
+
+  new Chartist.Line('#srs_goals_and_topics', {
+    labels: #{(1..sessions.size).to_a},
+    series: [
+      #{sessions.map &:goals_and_topics},
+      #{sessions.map {|session| 90 }}
+    ]
+  }, options);
+
+  new Chartist.Line('#srs_approach_or_method', {
+    labels: #{(1..sessions.size).to_a},
+    series: [
+      #{sessions.map &:approach_or_method},
+      #{sessions.map {|session| 90 }}
+    ]
+  }, options);
+
+  new Chartist.Line('#srs_overall', {
+    labels: #{(1..sessions.size).to_a},
+    series: [
+      #{sessions.map &:overall},
+      #{sessions.map {|session| 90 }}
+    ]
+  }, options);
+
+  new Chartist.Line('#srs_coping', {
+    labels: #{(1..sessions.size).to_a},
+    series: [
+      #{sessions.map &:coping},
+      #{sessions.map {|session| 90 }}
+    ]
+  }, options);

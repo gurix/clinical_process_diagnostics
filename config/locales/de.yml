@@ -1,4 +1,10 @@
 de:
+  srs_dimensions: &SRS_DIMENSIONS
+    relationship: Beziehung
+    goals_and_topics: Ziele und Themen
+    approach_or_method: Vorgehen
+    overall: Insgesamt
+    coping: Bewältigung
   shared:
     save: Speichern
     cancel: Abbrechen
@@ -33,6 +39,8 @@ de:
       new_client: Meine Sitzung bewerten
   
   clients:
+    children_session_rating_scale: *SRS_DIMENSIONS
+    session_rating_scale: *SRS_DIMENSIONS
     edit:
       title: Meine Einstellungen anpassen
       please_choose_a_therapist: Bitte wählen Sie Ihren Therapeuten aus
@@ -46,6 +54,9 @@ de:
       please_choose_a_therapist: Bitte wählen Sie Ihren Therapeuten aus.
     
     show:
+      survey:
+        children_session_rating_scale: Children Session Rating Scale (CSRS)
+        session_rating_scale: Session Rating Scale (SRS)
       other_clients: Liste aller Klienten
       relationship: Beziehung
       goals_and_topics: Ziele und Themen
@@ -68,6 +79,7 @@ de:
       amount_of_clients: "%{clients} Klienten"
 
     show:
+      logout: Zurück zur Startseite
       name: Name
       identifier: Identifikationsnummer
       statistics: Statistiken
@@ -82,12 +94,7 @@ de:
       session_rating_scale:
         title: Bitte bewerten Sie die heutige Sitzung
         save: Abschliessen
-        dimensions:
-          relationship: Beziehung
-          goals_and_topics: Ziele und Themen
-          approach_or_method: Vorgehen
-          overall: Insgesamt
-          coping: Bewältigung
+        dimensions: *SRS_DIMENSIONS
         relationship:
           negative: Ich fühle mich nicht verstanden und respektiert.
           positive: Ich fühle mich verstanden und respektiert.
@@ -107,12 +114,7 @@ de:
       children_session_rating_scale:
         title: Wie war unsere Sitzung heute?
         save: Ich bin fertig!
-        dimensions:
-          relationship: Beziehung
-          goals_and_topics: Ziele und Themen
-          approach_or_method: Vorgehen
-          overall: Insgesamt
-          coping: Bewältigung
+        dimensions: *SRS_DIMENSIONS
         relationship:
           negative: Ich habe mich mit dem Therapeut nicht wohlgefühlt.
           positive: Ich habe mich mit dem Therapeut wohlgefühlt.

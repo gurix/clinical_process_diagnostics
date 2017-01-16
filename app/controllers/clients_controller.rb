@@ -6,7 +6,8 @@ class ClientsController < ApplicationController
   def show
     @client = Client.find_by(token: params[:token])
     @therapist = Therapist.find_by(token: params[:therapist_token])
-    @sessions = @client.sessions.where(therapist: @therapist).asc(:create_at)
+    sessions = @client.sessions.where(therapist: @therapist).asc(:created_at)
+    @sessions_by_type =  sessions.group_by(&:_type)
   end
 
   def edit; end
