@@ -14,4 +14,14 @@ describe Therapist do
     expect(subject.token).not_to be_empty
     expect(subject.token_generated_at).to be < DateTime.now
   end
+
+  it 'validates the email address' do
+    subject = build :therapist
+
+    subject.email = 'stupidwhiteman@trump.com'
+    expect(subject).to be_valid
+
+    subject.email = 'noemailaddress'
+    expect(subject).not_to be_valid
+  end
 end

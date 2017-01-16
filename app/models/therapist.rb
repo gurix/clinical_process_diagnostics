@@ -8,7 +8,8 @@ class Therapist
 
   validates :email, presence: true
   validates :email, uniqueness: true
-  validates :name, presence: true
+  validates :email, email: true
+  validates :name,  presence: true
 
   has_many :sessions, dependent: :destroy, inverse_of: :therapist, class_name: 'Survey::Session'
   has_many :clients, inverse_of: :therapist

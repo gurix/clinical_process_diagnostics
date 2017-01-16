@@ -53,6 +53,9 @@ gem 'jbuilder', '~> 2.5'
 # Mongoid Database adapter
 gem 'mongoid', '~> 6.0.0'
 
+# Validates email addresses
+gem 'valid_email'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
