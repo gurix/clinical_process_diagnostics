@@ -1,7 +1,6 @@
 class TherapistsController < ApplicationController
-  http_basic_authenticate_with name: '', password: ENV['ADMIN_PASS'], if: ->() { (Rails.env.production? || Rails.env.staging?) }
-
   before_action :load_therapist, only: [:edit, :update, :destroy]
+  before_action :http_basic_auth, except: :show
 
   def new
     @therapist = Therapist.new
@@ -43,5 +42,12 @@ class TherapistsController < ApplicationController
 
   def therapist_params
     params.require(:therapist).permit(:email, :name)
+  end
+
+  def http_basic_auth
+    return if ENV['ADMIN_PASS'].blank?
+    authenticate_or_request_with_http_basic do |_username, password|
+      password == ENV['ADMIN_PASS']
+    end
   end
 end
