@@ -81,7 +81,7 @@ Rails.application.configure do
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 
-  config.action_mailer.default_url_options = { host: 'cpd-demo.herokuapp.com', protocol: 'https' }
+  config.action_mailer.default_url_options = { host: ENV['SMTP_DOMAIN'], protocol: 'https' }
   config.roadie.url_options = config.action_mailer.default_url_options
 
   config.action_mailer.delivery_method = :smtp
