@@ -19,3 +19,4 @@ spec/examples.txt
 
 # Ignore ruby version
 .ruby-version
+.env*
