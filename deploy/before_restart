@@ -20,7 +20,7 @@ end
 
 if File.file? 'Rakefile'
   tasks = []
-  
+
   # precompile assets
   changed_assets = `git diff #{oldrev} #{newrev} --name-only -z app/assets`.split("\0")
   tasks << 'assets:precompile' unless changed_assets.empty?
