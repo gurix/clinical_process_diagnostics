@@ -7,10 +7,12 @@ h1.hidden= title t('.title')
       = t('.relationship.positive')
 
 .row
-  .col-xs-1.emoticon.text-center 😞
+  .col-xs-1.emoticon.text-center 
+    = image_tag('frown.svg')
   .col-xs-10
     = f.input :relationship, as: :range, label: false, min: 0, max: 100, step: 1
-  .col-xs-1.emoticon.text-center 😁
+  .col-xs-1.emoticon.text-center
+    = image_tag('smile.svg')
 
 .row
   .col-xs-4
@@ -19,10 +21,12 @@ h1.hidden= title t('.title')
   .col-xs-4.text-right
     = t('.goals_and_topics.positive')
 .row
-  .col-xs-1.emoticon.text-center 😞
+  .col-xs-1.emoticon.text-center 
+    = image_tag('frown.svg')
   .col-xs-10
     = f.input :goals_and_topics, as: :range, label: false, min: 0, max: 100, step: 1
-  .col-xs-1.emoticon.text-center 😁
+  .col-xs-1.emoticon.text-center 
+    = image_tag('smile.svg')
 
 .row
   .col-xs-4
@@ -31,10 +35,12 @@ h1.hidden= title t('.title')
   .col-xs-4.text-right
     = t('.approach_or_method.positive')
 .row
-  .col-xs-1.emoticon.text-center 😞
+  .col-xs-1.emoticon.text-center 
+    = image_tag('frown.svg')
   .col-xs-10
     = f.input :approach_or_method, as: :range, label: false, min: 0, max: 100, step: 1
-  .col-xs-1.emoticon.text-center 😁
+  .col-xs-1.emoticon.text-center 
+    = image_tag('smile.svg')
 
 .row
   .col-xs-4
@@ -43,10 +49,12 @@ h1.hidden= title t('.title')
   .col-xs-4.text-right
       = t('.overall.positive')
 .row
-  .col-xs-1.emoticon.text-center 😞
+  .col-xs-1.emoticon.text-center 
+    = image_tag('frown.svg')
   .col-xs-10
     = f.input :overall, as: :range, label: false, min: 0, max: 100, step: 1
-  .col-xs-1.emoticon.text-center 😁
+  .col-xs-1.emoticon.text-center 
+    = image_tag('smile.svg')
 
 .row
   .col-xs-4
@@ -55,10 +63,12 @@ h1.hidden= title t('.title')
   .col-xs-4.text-right
       = t('.coping.positive')
 .row
-  .col-xs-1.emoticon.text-center 😞
+  .col-xs-1.emoticon.text-center
+    = image_tag('frown.svg')
   .col-xs-10
     = f.input :coping, as: :range, label: false, min: 0, max: 100, step: 1
-  .col-xs-1.emoticon.text-center 😁
+  .col-xs-1.emoticon.text-center 
+    = image_tag('smile.svg')
 
   .form-group
     br
