@@ -151,7 +151,9 @@ de:
           positive: Ich kann meine Probleme selbstständig lösen.
 
       create:
-        session_suceessfully_created: Ihre Bewertung wurde erfolgreich gepeichert. Besten Dank.
+        title: Prozessmessung
+        session_suceessfully_created: Vielen Dank. Ihre Bewertung wurde erfolreich gespeichert.
+        new_session: Neue Bewertung erfassen
 
   mongoid:
      attributes:

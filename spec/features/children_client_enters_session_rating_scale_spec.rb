@@ -39,8 +39,6 @@ feature 'session rating scale input' do
 
     expect(Survey::Session.last.therapist).to eq Client.last.therapist
 
-    expect(page).to have_content 'Ihre Bewertung wurde erfolgreich gepeichert. Besten Dank.'
-
-    expect(current_path).to eq root_path
+    expect(page).to have_content 'Vielen Dank. Ihre Bewertung wurde erfolreich gespeichert.'
   end
 end

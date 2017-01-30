@@ -16,8 +16,7 @@ module Survey
       @session.therapist = @client.therapist # Ensure we always state which therapist guided the session
 
       if @session.save
-        flash[:success] = t('.session_suceessfully_created')
-        redirect_to root_path
+        render :create
         return
       end
       render :new
