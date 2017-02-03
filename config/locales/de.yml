@@ -30,6 +30,7 @@ de:
       title: Zugriffsinformationen zurücksetzen
       email: E-Mail 
       send: Zugriffsinformationen zusenden
+      
     create:
       email_not_found: Die E-Mail-Adresse %{email} existiert nicht.
       email_sent: Ihre Zugriffsinformationen werden Ihnen in Kürze per E-Mail zugestellt.
@@ -52,6 +53,7 @@ de:
       identifier_hint: Die Klienten-Nummer wird ihnen durch Ihren Therapeuten bekannt gegeben.
       access_for_therapists: Zugang für Therapeuten
       please_choose_a_therapist: Bitte wählen Sie Ihren Therapeuten aus.
+      ask_for_cancelation: Wollen sie die Befragung ohne zu speichern beenden?
     
     show:
       survey:
@@ -109,6 +111,7 @@ de:
     sessions: 
       new:
         therapist: "Der Therapeut der heutigen Sitzung ist %{name}"
+        ask_for_cancelation: Wollen sie die Befragung ohne zu speichern beenden?
 
       session_rating_scale:
         title: Bitte bewerten Sie die heutige Sitzung

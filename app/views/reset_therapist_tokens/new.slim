@@ -6,5 +6,7 @@ h1.hidden = title t('.title')
       .form-group
         = f.label t('.email'), required: false
         = f.text_field :email, as: :email, class: 'form-control'
-      
-      = f.submit t('.send'), class: 'btn btn-primary btn-block'
+      .form-group
+        = f.submit t('.send'), class: 'btn btn-primary btn-block'
+      .form-group
+        = link_to t('shared.cancel'), root_path, class: 'btn btn-default btn-block'

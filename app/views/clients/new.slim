@@ -9,6 +9,10 @@ h1.hidden = title t('.title')
         = f.input :class_of_age, as: :radio_buttons, collection: t('clients.class_of_age').map{ |x| [x.first, raw(x.last)]}, label_method: :last, value_method: :first, required: false
         = f.input :identifier, as: :hidden
         = f.hidden_field :second_step, value: true
-      = f.submit t('shared.next'), class: 'btn btn-primary btn-block'
+      .form-group
+        = f.submit t('shared.next'), class: 'btn btn-primary btn-block'
+      - if @client.identifier.present?
+        .form-group.text-center
+          = link_to t('shared.cancel'), root_path, data: {confirm: t('.ask_for_cancelation')}
 - if @client.identifier.blank?
   = link_to t('.access_for_therapists'), new_reset_therapist_token_path, class: 'access_for_therapists'
