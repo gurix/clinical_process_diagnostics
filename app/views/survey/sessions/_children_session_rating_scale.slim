@@ -69,6 +69,9 @@ h1.hidden= title t('.title')
     = f.input :coping, as: :range, label: false, min: 0, max: 100, step: 1
   .col-xs-1.emoticon.text-center 
     = image_tag('smile.svg')
+.row
+  .col-xs-12
+    = f.input :comment, as: :text, placeholder: t('.comment'), label: false
 
   .form-group
     br

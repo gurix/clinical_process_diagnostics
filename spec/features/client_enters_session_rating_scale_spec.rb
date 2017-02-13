@@ -35,6 +35,8 @@ feature 'session rating scale input' do
     find("input[id$='survey_session_rating_scale_overall']").set 20
     find("input[id$='survey_session_rating_scale_coping']").set 10
 
+    find("textarea[id$='survey_session_rating_scale_comment']").set 'Teste den Test'
+
     expect { click_button 'Abschliessen' }.to change { ActionMailer::Base.deliveries.count }.by(1)
 
     expect(Survey::Session.last.therapist).to eq Client.last.therapist

@@ -5,6 +5,7 @@ de:
     approach_or_method: Vorgehen
     overall: Insgesamt
     coping: Bewältigung
+  
   shared:
     save: Speichern
     cancel: Abbrechen
@@ -34,6 +35,7 @@ de:
     create:
       email_not_found: Die E-Mail-Adresse %{email} existiert nicht.
       email_sent: Ihre Zugriffsinformationen werden Ihnen in Kürze per E-Mail zugestellt.
+  
   pages:
     index:
       title: Prozessmessung
@@ -66,7 +68,8 @@ de:
       overall: Insgesamt
       coping: Bewältigung
       date: Zeitpunkt der Bewertung
-    
+      comment: Kommentar
+      
     class_of_age:
       child: Kind / Jugendlich
       adult: Erwachsen
@@ -132,6 +135,7 @@ de:
         coping:
           negative: Ich bin noch nicht bereit das Problem selbstständig anzugehen.
           positive: Ich bin bereit das Problem selbstständig anzugehen.
+        comment: Was ich sonst noch sagen möchte.
       
       children_session_rating_scale:
         title: Wie war unsere Sitzung heute?
@@ -152,6 +156,7 @@ de:
         coping:
           negative: Ich bin nicht zuversichtlich, dass ich meine Probleme lösen kann.
           positive: Ich bin jetzt zuversichtlich, dass ich meine Probleme lösen kann.
+        comment: Was ich sonst noch sagen möchte.
 
       create:
         title: Prozessmessung
