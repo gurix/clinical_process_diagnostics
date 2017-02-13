@@ -17,7 +17,7 @@ de:
     error: Die Eingabe konnte nicht gespeichert werden, überprüfen Sie bitte ihre Eingaben.
     required: "* bezeichnet Pflichtfeld"
     unknown: Unbekannt
-    staging_warning: Sie befinden sich auf einer Testumgebung. Als Klient sollten Sie diese Warnung nicht sehen, melden Sie sich bei Ihrem Therapeuten.
+    staging_warning: Sie befinden sich auf einer Testumgebung. Als Klient/in sollten Sie diese Warnung nicht sehen, melden Sie sich bei Ihrer Beratungsperson.
   
   emails:
     reset_token:
@@ -27,7 +27,7 @@ de:
   
   reset_therapist_tokens:
     new:
-      instructions: Geben Sie hier Ihre E-Mail-Adresse ein, die sie als Therapeut hinterlegt haben. Sie bekommen Ihre aktuellen Zugriffsinformationen umgehend per E-Mail zugestellt.
+      instructions: Geben Sie hier Ihre E-Mail-Adresse ein, die sie als Therapeut/in hinterlegt haben. Sie bekommen Ihre aktuellen Zugriffsinformationen umgehend per E-Mail zugestellt.
       title: Zugriffsinformationen zurücksetzen
       email: E-Mail 
       send: Zugriffsinformationen zusenden
@@ -46,14 +46,14 @@ de:
     session_rating_scale: *SRS_DIMENSIONS
     edit:
       title: Meine Einstellungen anpassen
-      please_choose_a_therapist: Bitte wählen Sie Ihren Therapeuten aus
+      please_choose_a_therapist: Bitte wählen Sie Ihre/n Therapeut/in
       info_title: Diese Einstellungen betreffen die Klienten-Nummer
       info_body: Bitte überprüfen Sie die Klienten-Nummer nochmals, bevor Sie die Anpassungen durchführen.
-      info_exit: Bitte melden Sie den Klienten neu an, wenn  die  Klienten-Nummer falsch ist.
+      info_exit: Bei falscher Klienten-Nummer, melden Sie sich nochmals neu an.
     new:
       title: Sitzung bewerten
-      identifier_hint: Die Klienten-Nummer wird ihnen durch Ihren Therapeuten bekannt gegeben.
-      access_for_therapists: Zugang für Therapeuten
+      identifier_hint: Die Klienten-Nummer wird Ihnen durch Ihre/n Therapeutin/en bekannt gegeben.
+      access_for_therapists: Zugang für Beratende
       please_choose_a_therapist: Bitte wählen Sie Ihren Therapeuten aus.
       ask_for_cancelation: Wollen sie die Befragung ohne zu speichern beenden?
     
@@ -113,7 +113,7 @@ de:
   survey:
     sessions: 
       new:
-        therapist: "Der Therapeut der heutigen Sitzung ist %{name}"
+        therapist: "Die heutige Sitzung wurde begleitet von %{name}"
         ask_for_cancelation: Wollen sie die Befragung ohne zu speichern beenden?
 
       session_rating_scale:
@@ -142,8 +142,8 @@ de:
         save: Ich bin fertig!
         dimensions: *SRS_DIMENSIONS
         relationship:
-          negative: Ich habe mich mit dem Therapeut nicht wohlgefühlt.
-          positive: Ich habe mich mit dem Therapeut wohlgefühlt.
+          negative: Ich habe mich mit dem Therapeut / der Therapeutin nicht wohlgefühlt.
+          positive: Ich habe mich mit dem Therapeut / der Therapeutin wohlgefühlt.
         goals_and_topics:
           negative: Was wir gemacht haben war nicht wichtig für mich.
           positive: Was wir gemacht haben war wichtig für mich.
@@ -168,6 +168,6 @@ de:
         therapist:
           email: E-Mail
         client:
-          identifier: Bitte geben Sie ihre Klienten-Nummer an.
-          name: Bitte geben Sie ihren Namen und Vornamen an.
-          class_of_age: Bitte geben Sie ihre Alterskategorie an
+          identifier: Bitte geben Sie Ihre Klienten-Nummer an.
+          name: Bitte geben Sie Ihren Namen und Vornamen an.
+          class_of_age: Bitte geben Sie Ihre Alterskategorie an

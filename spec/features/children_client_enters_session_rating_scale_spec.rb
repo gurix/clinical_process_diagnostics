@@ -7,20 +7,20 @@ feature 'children session rating scale input' do
 
     visit new_client_path
 
-    fill_in 'Bitte geben Sie ihre Klienten-Nummer an.', with: 'test'
+    fill_in 'Bitte geben Sie Ihre Klienten-Nummer an.', with: 'test'
 
     click_button 'Weiter'
 
-    expect(page).to_not have_content 'Bitte geben Sie ihre Klienten-Nummer an'
+    expect(page).to_not have_content 'Bitte geben Sie Ihre Klienten-Nummer an'
 
-    expect(page).to have_content 'Bitte geben Sie ihren Namen und Vornamen an'
+    expect(page).to have_content 'Bitte geben Sie Ihren Namen und Vornamen an'
     expect(page).to_not have_content 'muss ausgefüllt werden'
 
     click_button 'Weiter'
 
     expect(page).to have_content 'muss ausgefüllt werden'
 
-    fill_in 'Bitte geben Sie ihren Namen und Vornamen an.', with: 'Hanf Ueli'
+    fill_in 'Bitte geben Sie Ihren Namen und Vornamen an.', with: 'Hanf Ueli'
     select 'Dr. Paul Weston', from: 'client_therapist_id'
 
     choose 'Kind / Jugendliche'
