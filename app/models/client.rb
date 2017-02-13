@@ -25,6 +25,10 @@ class Client
     last_session.therapist if last_session
   end
 
+  def identifier=(value)
+    super(value.downcase)
+  end
+
   def session_type_by_age
     case class_of_age
     when 'child'

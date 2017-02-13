@@ -1,8 +1,29 @@
 require 'rails_helper'
 
-feature 'edit client' do
+feature 'client' do
+  let(:sigmund) { Therapist.create(name: 'Sigmund Freud', email: 'sigmund@sigmund-freud.at') }
+
+  scenario 'entering a client identifier works either upcase or downcase' do
+    client = create :client, therapist: sigmund, identifier: 'test', class_of_age: 'adult'
+
+    visit new_client_path
+
+    fill_in 'Bitte geben Sie Ihre Klienten-Nummer an.', with: 'test'
+
+    click_button 'Weiter'
+
+    expect(current_path).to eq new_client_survey_session_rating_scale_path(client)
+
+    visit new_client_path
+
+    fill_in 'Bitte geben Sie Ihre Klienten-Nummer an.', with: 'TEST'
+
+    click_button 'Weiter'
+
+    expect(current_path).to eq new_client_survey_session_rating_scale_path(client)
+  end
+
   scenario 'a client changes his preferences' do
-    sigmund = Therapist.create(name: 'Sigmund Freud', email: 'sigmund@sigmund-freud.at')
     Therapist.create(name: 'Dr. Paul Weston', email: 'paul.weston@intreatment.movie')
 
     client = create :client, therapist: sigmund, class_of_age: 'adult'
@@ -11,7 +32,7 @@ feature 'edit client' do
 
     select 'Dr. Paul Weston', from: 'client_therapist_id'
 
-    choose 'Kind / Jugendlich'
+    choose 'Kind / Jugendliche'
 
     click_button 'Weiter'
 
@@ -21,7 +42,7 @@ feature 'edit client' do
 
     visit edit_client_path(client)
 
-    choose 'Erwachsen'
+    choose 'Erwachsene'
 
     click_button 'Weiter'
 

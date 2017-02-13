@@ -31,7 +31,7 @@ class ClientsController < ApplicationController
   private
 
   def find_or_initialize_client
-    @client = Client.find_or_initialize_by(identifier: client_params[:identifier])
+    @client = Client.find_or_initialize_by(identifier: client_params[:identifier].downcase)
   end
 
   def client_params
