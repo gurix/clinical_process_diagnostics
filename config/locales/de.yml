@@ -69,10 +69,10 @@ de:
       coping: Bewältigung
       date: Zeitpunkt der Bewertung
       comment: Kommentar
-      
+
     class_of_age:
-      child: Kind / Jugendlich
-      adult: Erwachsen
+      child: Kind / Jugendliche
+      adult: Erwachsene
 
   therapists:
     new:

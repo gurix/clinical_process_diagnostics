@@ -23,7 +23,7 @@ feature 'session rating scale input' do
     fill_in 'Bitte geben Sie ihren Namen und Vornamen an', with: 'Hanf Ueli'
     select 'Dr. Paul Weston', from: 'client_therapist_id'
 
-    choose 'Erwachsen'
+    choose 'Erwachsene'
 
     expect { click_button 'Weiter' }.to change { Client.count }.by(1)
 
