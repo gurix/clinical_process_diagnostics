@@ -124,8 +124,8 @@ de:
           negative: Wir arbeiten nicht an Themen die mir wichtig sind.
           positive: Wir arbeiten an Themen die mir wichtig sind.
         approach_or_method:
-          negative: Das Vorgehen in der Beratung finde ich unpassend.
-          positive: Das Vorgehen in der Beratung entspricht mir.
+          negative: Das Vorgehen in der Beratung / Therapie finde ich unpassend.
+          positive: Das Vorgehen in der Beratung / Therapie entspricht mir.
         overall:
           negative: Die heutige Sitzung fand ich nicht gut.
           positive: Insgesamt bin ich mit der Sitzung zufrieden.
@@ -147,11 +147,11 @@ de:
           negative: Wie wir heute gearbeitet haben war nicht hilfreich.
           positive: Wie wir heute gearbeitet haben war hilfreich.
         overall:
-          negative: Ich fand das heutige Gespräch über alles gesehen schlecht.
-          positive: Ich fand das heutige Gespräch über alles gesehen gut.
+          negative: Ich fand die heutige Sitzung über alles gesehen schlecht.
+          positive: Ich fand die heutige Sitzung über alles gesehen gut.
         coping:
-          negative: Ich kann meine Probleme nicht selbstständig lösen.
-          positive: Ich kann meine Probleme selbstständig lösen.
+          negative: Ich bin nicht zuversichtlich, dass ich meine Probleme lösen kann.
+          positive: Ich bin jetzt zuversichtlich, dass ich meine Probleme lösen kann.
 
       create:
         title: Prozessmessung
