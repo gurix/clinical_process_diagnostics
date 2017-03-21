@@ -7,7 +7,7 @@ AllCops:
     - 'config/**/*'
     - 'script/**/*'
     - bin/**
-    - spec/dummy/config/initializers/secret_token.rb
+    - spec/**/*
 Documentation:
   Enabled: false
 LineLength:
