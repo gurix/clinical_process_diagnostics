@@ -17,11 +17,10 @@ body {
 header {
   background-color: $brand-info;
   margin-bottom: 20px;
-  .title {
-    padding: 12px;
+  .title h1, {
     font-size: 24pt;
-    font-style: bold;
-    color: #FFF;
+    color: #16405B;
+    margin: 14px 0;
   }
 }
 
@@ -70,7 +69,7 @@ a.access_for_therapists {
   a {
     display: block;
     padding-top: 16px;
-    color: #FFF;
+    color: #16405B;
   }
 
   a.link-danger {
@@ -86,5 +85,5 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    color: #FFF;
+    color: #550000;
 }
