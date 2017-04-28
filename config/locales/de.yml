@@ -123,6 +123,7 @@ de:
       session_rating_scale:
         title: Bitte bewerten Sie die heutige Sitzung
         save: Abschliessen
+        slider_infos: Im Folgenden können Sie die Regler zwischen 0 und  100 einstellen. Bei 0 trifft die negative aussage zu, bei 100 trifft die positive Aussage zu.
         dimensions: *SRS_DIMENSIONS
         relationship:
           negative: Ich fühle mich nicht verstanden und respektiert.
@@ -144,6 +145,7 @@ de:
       children_session_rating_scale:
         title: Wie war unsere Sitzung heute?
         save: Ich bin fertig!
+        slider_infos: Im Folgenden kannst du die Regler zwischen 0 und  100 einstellen. Bei 0 trifft die negative aussage zu, bei 100 trifft die positive Aussage zu.
         dimensions: *SRS_DIMENSIONS
         relationship:
           negative: Ich habe mich mit dem Therapeut / der Therapeutin nicht wohlgefühlt.
