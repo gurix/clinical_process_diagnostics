@@ -1,7 +1,7 @@
 doctype html
-html
+html lang="#{I18n.locale}"
   head
-    title CPD - #{content_for(:title)}
+    title CPD - #{content_for(:title) || @title}
     = csrf_meta_tags
     link href="/favicon.ico" rel=("shortcut icon") type="image/x-icon" /
     link href="/apple-touch-icon.png" rel="apple-touch-icon" /
@@ -22,7 +22,7 @@ html
       .container-fluid
         .row
           .col-xs-12.col-sm-6.title
-            h1= content_for(:title)
+            h1= content_for(:title) || @title
           .col-xs-12.col-sm-6.header_right
             = content_for(:header_right)
     .container

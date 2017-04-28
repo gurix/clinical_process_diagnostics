@@ -75,7 +75,11 @@ a.access_for_therapists {
   a.link-danger {
     color: darkred;  
   }
-} 
+}
+
+.control-label small {
+  color: #CCC;
+}
 
 footer {
     text-align: center;

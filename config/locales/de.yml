@@ -57,6 +57,9 @@ de:
       please_choose_a_therapist: Bitte wählen Sie Ihren Therapeuten aus.
       ask_for_cancelation: Wollen sie die Befragung ohne zu speichern beenden?
     
+    create:
+      title: Angaben zum Klient %{identifier}
+      
     show:
       survey:
         children_session_rating_scale: Children Session Rating Scale (CSRS)
@@ -81,7 +84,7 @@ de:
     edit:
       title: Therapeut beabeiten
       ask_for_delete: Wollen Sie diesen Therapeut wirkilich löschen?
-      delete: Therapeut löschen
+      delete: "%{name} als Therapeut löschen"
 
     destroy:
       deleted: Therapeut wurde gelöscht
@@ -93,14 +96,15 @@ de:
       created: Therapeut wurde erstellt.
     
     index:
+      table_caption: Im System erfasste Therapeuten 
       title: Therapeuten
       name: Name
       email: E-Mail-Adresse
       statistics: Statistiken
       amount_of_sessions: "%{sessions} Sitzungen bewertet"
       amount_of_clients: "%{clients} Klienten"
-      edit: Bearbeiten
-      new: Therapeut erfassen
+      edit: "%{name} bearbeiten"
+      new: Einen Therapeuten neu erfassen
 
     show:
       logout: Zurück zur Startseite
@@ -159,7 +163,7 @@ de:
         comment: Was ich sonst noch sagen möchte.
 
       create:
-        title: Prozessmessung
+        title: Bewertung gespeichert
         session_suceessfully_created: Vielen Dank. Ihre Bewertung wurde erfolreich gespeichert.
         new_session: Neue Bewertung erfassen
 
