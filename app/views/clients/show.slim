@@ -21,17 +21,6 @@ javascript:
   - @sessions_by_type.each do |klass, sessions|
     h2 = t(".survey.#{klass.demodulize.underscore}")
     = render klass.demodulize.underscore, sessions: sessions
-    table.table
-      tr
-        th width="5%" #
-        th width="30%" = t('.date')
-        th = t('.comment')
-      - sessions.each_with_index do |session, index| 
-        tr
-          td = index + 1
-          td = l(session.created_at)
-          td = session.comment
-
 
 javascript:
   function chart_headstand() {

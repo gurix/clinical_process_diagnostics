@@ -42,8 +42,12 @@ de:
       new_client: Meine Sitzung bewerten
   
   clients:
-    children_session_rating_scale: *SRS_DIMENSIONS
-    session_rating_scale: *SRS_DIMENSIONS
+    children_session_rating_scale:
+      caption: Children Session Rating Scale Sitzungen von %{name}
+      dimensions: *SRS_DIMENSIONS
+    session_rating_scale:
+      caption: Session Rating Scale Sitzungen von %{name}
+      dimensions: *SRS_DIMENSIONS
     edit:
       title: Meine Einstellungen anpassen
       please_choose_a_therapist: Bitte wählen Sie Ihre/n Therapeut/in
@@ -72,6 +76,7 @@ de:
       coping: Bewältigung
       date: Zeitpunkt der Bewertung
       comment: Kommentar
+      count: Sitzungsnummer
 
     class_of_age:
       child: Kind / Jugendliche
