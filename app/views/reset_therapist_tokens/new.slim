@@ -4,7 +4,7 @@ h1.hidden = title t('.title')
     p = t('.instructions')
     = simple_form_for(:reset_therapist_token, url: reset_therapist_token_path) do |f| 
       .form-group
-        = f.label t('.email'), required: false
+        = f.label t('.email'), required: true, for: 'reset_therapist_token_email'
         = f.text_field :email, as: :email, class: 'form-control'
       .form-group
         = f.submit t('.send'), class: 'btn btn-primary btn-block'
