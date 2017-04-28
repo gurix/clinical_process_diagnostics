@@ -111,7 +111,7 @@ de:
       name: Name
       identifier: Identifikationsnummer
       statistics: Statistiken
-      clients: Klienten
+      clients: Klienten von %{name}
       amount_of_client_sessions: "%{sessions} Sitzungen bewertet"
 
   survey:
