@@ -1,7 +1,10 @@
 doctype html
 html lang="#{I18n.locale}"
   head
-    title CPD - #{content_for(:title) || @title}
+    title 
+      - flash.each do |type, message|
+        = message
+      |  CPD - #{content_for(:title) || @title}
     = csrf_meta_tags
     link href="/favicon.ico" rel=("shortcut icon") type="image/x-icon" /
     link href="/apple-touch-icon.png" rel="apple-touch-icon" /
