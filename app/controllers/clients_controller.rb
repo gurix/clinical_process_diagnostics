@@ -26,7 +26,7 @@ class ClientsController < ApplicationController
     redirect_to(new_client_session_path) && return if @client.persisted? # The client already exists we can proceed directly
     @client.assign_attributes(client_params)
     redirect_to(new_client_session_path) && return if @client.second_step && @client.save
-    @title =  t('.title', identifier: @client.identifier)
+    @title = t('.title', identifier: @client.identifier)
     render :new
   end
 

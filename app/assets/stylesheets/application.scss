@@ -4,6 +4,7 @@
 @import "variables";
 @import "bootstrap";
 @import "bootstrap-slider/bootstrap-slider";
+@import "font-awesome";
 @import 'chartist.min';
 @import 'profile';
 @import 'range_slider';
@@ -95,6 +96,22 @@ footer {
     color: #550000;
 }
 
+.alert.danger{
+  @extend .alert-danger;
+}
+  
+.alert.notice {
+    @extend .alert-info;
+}
+
 .alert-danger {
   color: #A90000;
+}
+
+.nav-link {
+  font-weight: bold;
+  
+  i.fa {
+    margin: 0 10px;
+  }
 }

@@ -26,14 +26,15 @@ de:
       subject: "Neue Bewertung von %{identifier}"
   
   reset_therapist_tokens:
+    does_not_exist: Die E-Mail-Adresse %{email} ist keinem Therapeuten zugeordnet.
     new:
       instructions: Geben Sie hier Ihre E-Mail-Adresse ein, die sie als Therapeut/in hinterlegt haben. Sie bekommen Ihre aktuellen Zugriffsinformationen umgehend per E-Mail zugestellt.
       title: Zugriffsinformationen zurücksetzen
       email: E-Mail 
       send: Zugriffsinformationen zusenden
-      
+      back: Zurück zur Startseite
+
     create:
-      email_not_found: Die E-Mail-Adresse %{email} existiert nicht.
       email_sent: Ihre Zugriffsinformationen werden Ihnen in Kürze per E-Mail zugestellt.
   
   pages:

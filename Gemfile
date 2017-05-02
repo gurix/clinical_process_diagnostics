@@ -22,6 +22,9 @@ gem 'therubyracer', platforms: :ruby
 # Library that generates fake data.
 gem 'faker'
 
+# provides the Font-Awesome web fonts and stylesheets as a Rails engine for use with the asset pipeline.
+gem "font-awesome-rails"
+
 # This gem hooks up your Rails application with Roadie to help you generate HTML emails.
 gem 'roadie-rails', '~> 1.0'
 

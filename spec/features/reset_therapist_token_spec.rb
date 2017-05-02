@@ -8,7 +8,7 @@ feature 'reset therapist token' do
 
     click_button 'Zugriffsinformationen zusenden'
 
-    expect(page).to have_content 'Die E-Mail-Adresse hans@muster.de existiert nicht.'
+    expect(page).to have_content 'Die E-Mail-Adresse hans@muster.de ist keinem Therapeuten zugeordnet.'
   end
 
   scenario 'a therapist enters the correct email address' do

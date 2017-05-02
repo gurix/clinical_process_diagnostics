@@ -1,12 +1,17 @@
 class ResetTherapistTokensController < ApplicationController
+  def new
+    @reset_therapist_token = ResetTherapistToken.new
+  end
+
   def create
-    begin
-      therapist = Therapist.find_by(email: reset_therapist_token_params[:email])
-      TherapistMailer.reset_token(therapist.id).deliver
+    @reset_therapist_token = ResetTherapistToken.new reset_therapist_token_params
+    if @reset_therapist_token.valid?
+      TherapistMailer.reset_token(Therapist.find_by(email: @reset_therapist_token.email)).deliver
       flash.now[:success] = t('.email_sent')
-    rescue Mongoid::Errors::DocumentNotFound
-      flash.now[:error] = t('.email_not_found', email: reset_therapist_token_params[:email])
+    else
+      flash.now[:danger] = @reset_therapist_token.errors.first.last
     end
+
     render :new
   end
 
