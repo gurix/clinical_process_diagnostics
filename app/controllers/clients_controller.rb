@@ -1,3 +1,5 @@
+require 'csv'
+
 class ClientsController < ApplicationController
   include ActionController::Live
 
