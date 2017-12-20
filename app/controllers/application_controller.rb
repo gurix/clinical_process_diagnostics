@@ -26,4 +26,11 @@ class ApplicationController < ActionController::Base
       therapist.save
     end
   end
+
+  def http_basic_auth
+    return if ENV['ADMIN_PASS'].blank?
+    authenticate_or_request_with_http_basic do |_username, password|
+      password == ENV['ADMIN_PASS']
+    end
+  end
 end

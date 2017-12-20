@@ -1,7 +1,24 @@
 class ClientsController < ApplicationController
+  include ActionController::Live
+
+  before_action :http_basic_auth, only: :index
   before_action :find_or_initialize_client, only: :create
   before_action :load_therapists # Loads the list with all available therapists
-  before_action :load_client, only: [:edit, :update]
+  before_action :load_client, only: %i[edit update]
+
+  def index
+    csv_header
+
+    Client.each do |client|
+      client.sessions.each do |session|
+        response.stream.write CSV.generate_line([client.identifier, session.created_at, session.updated_at, session.therapist.name, session.therapist.email,
+                                                 session.version, session.class.name, session.relationship, session.goals_and_topics,
+                                                 session.approach_or_method, session.overall, session.coping, session.comment])
+      end
+    end
+  ensure
+    response.stream.close
+  end
 
   def show
     @client = Client.find_by(token: params[:token])
@@ -51,5 +68,12 @@ class ClientsController < ApplicationController
 
   def load_client
     @client = Client.find(params[:id])
+  end
+
+  def csv_header
+    #response.headers['Content-Disposition'] = 'attachment; filename="filename.csv"'
+    #response.headers['Content-Type'] = 'text/csv'
+    response.stream.write CSV.generate_line(%w[identifier created_at updated_at therapist_name therapist_email version scale
+      relationship goals_and_topics approach_or_method overall coping comment])
   end
 end

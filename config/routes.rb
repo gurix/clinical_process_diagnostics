@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'clients#new'
 
-  resources :clients, only: [:new, :create, :edit, :update] do
+  resources :clients, only: [:index, :new, :create, :edit, :update] do
     namespace :survey do
       resources :session_rating_scales, controller: 'sessions', type: 'Survey::SessionRatingScale'
       resources :children_session_rating_scales, controller: 'sessions', type: 'Survey::ChildrenSessionRatingScale'
