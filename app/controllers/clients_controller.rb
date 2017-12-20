@@ -11,6 +11,7 @@ class ClientsController < ApplicationController
 
     Client.each do |client|
       client.sessions.each do |session|
+        next if session.therapist.blank?
         response.stream.write CSV.generate_line([client.identifier, session.created_at, session.updated_at, session.therapist.name, session.therapist.email,
                                                  session.version, session.class.name, session.relationship, session.goals_and_topics,
                                                  session.approach_or_method, session.overall, session.coping, session.comment])
