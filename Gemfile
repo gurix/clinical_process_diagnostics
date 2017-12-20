@@ -22,9 +22,6 @@ gem 'therubyracer', platforms: :ruby
 # Library that generates fake data.
 gem 'faker'
 
-# This library provides a complete interface to CSV files and data.
-gem 'csv'
-
 # provides the Font-Awesome web fonts and stylesheets as a Rails engine for use with the asset pipeline.
 gem "font-awesome-rails"
 
