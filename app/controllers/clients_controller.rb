@@ -71,8 +71,8 @@ class ClientsController < ApplicationController
   end
 
   def csv_header
-    #response.headers['Content-Disposition'] = 'attachment; filename="filename.csv"'
-    #response.headers['Content-Type'] = 'text/csv'
+    response.headers['Content-Disposition'] = 'attachment; filename="' + Time.now.strftime("%Y%m%d%H%M") + '.csv"'
+    response.headers['Content-Type'] = 'text/csv'
     response.stream.write CSV.generate_line(%w[identifier created_at updated_at therapist_name therapist_email version scale
       relationship goals_and_topics approach_or_method overall coping comment])
   end
