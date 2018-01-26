@@ -29,7 +29,7 @@ gem "font-awesome-rails"
 gem 'roadie-rails', '~> 1.0'
 
 # A fixtures replacement with a straightforward definition syntax
-gem "factory_girl_rails", "~> 4.0"
+gem "factory_bot_rails"
 
 # Collecting Locale data for Ruby on Rails
 gem 'rails-i18n'

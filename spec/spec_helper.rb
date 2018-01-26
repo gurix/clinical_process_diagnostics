@@ -4,7 +4,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'rails/mongoid'
 require 'mongoid-rspec'
-require 'factory_girl'
+require 'factory_bot'
 require 'faker'
 require 'capybara/rspec'
 require 'capybara/poltergeist'
@@ -14,14 +14,14 @@ RSpec.configure do |config|
   config.include Mongoid::Matchers, type: :model
 
   config.before(:suite) do
-    FactoryGirl.reload
+    FactoryBot.reload
   end
 
   config.after(:each) do
     Mongoid.purge!
   end
 
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
   config.include Rails.application.routes.url_helpers
 
   Capybara.javascript_driver = :poltergeist

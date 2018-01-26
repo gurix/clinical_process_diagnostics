@@ -7,14 +7,10 @@ development:
 test:
   clients:
     default:
-      database: cpd_est
+      database: cpd_test
       hosts:
         - localhost:27017
-      options:
-        read:
-          mode: :primary
-        max_pool_size: 1
-
+      
 staging:
   clients:
     default:
