@@ -1,5 +1,5 @@
 class TherapistsController < ApplicationController
-  before_action :load_therapist, only: [:edit, :update, :destroy]
+  before_action :load_therapist, only: %i[edit update destroy]
   before_action :http_basic_auth, except: :show
 
   def new

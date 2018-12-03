@@ -11,7 +11,7 @@ gem 'sass-rails', '~> 5.0'
 # Sass-powered version of Bootstrap 3
 gem 'bootstrap-sass', '~> 3.3.6'
 # Use slim as default language
-gem "slim-rails"
+gem 'slim-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -25,13 +25,13 @@ gem 'therubyracer', platforms: :ruby
 gem 'faker'
 
 # provides the Font-Awesome web fonts and stylesheets as a Rails engine for use with the asset pipeline.
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 
 # This gem hooks up your Rails application with Roadie to help you generate HTML emails.
 gem 'roadie-rails', '~> 1.0'
 
 # A fixtures replacement with a straightforward definition syntax
-gem "factory_bot_rails"
+gem 'factory_bot_rails'
 
 # Collecting Locale data for Ruby on Rails
 gem 'rails-i18n'
@@ -92,12 +92,12 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console'
   gem 'listen', '~> 3.0.5'
+  gem 'web-console'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   # gem 'spring'
   # gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

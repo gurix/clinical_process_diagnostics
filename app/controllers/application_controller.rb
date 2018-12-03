@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
   # calculate how long a user needed for a form input, ussually we just
   def input_to_fast?
     raise 'session[:form_timestamp] not set' unless session[:form_timestamp]
+
     duration = Time.now - session[:form_timestamp].to_time
     duration < INPUT_TIMEOUT
   end
@@ -22,6 +23,7 @@ class ApplicationController < ActionController::Base
   def expire_tokens
     Therapist.each do |therapist|
       next if therapist.token_generated_at && therapist.token_generated_at >= TOKEN_TIMEOUT.ago
+
       therapist.reset_token
       therapist.save
     end
@@ -29,6 +31,7 @@ class ApplicationController < ActionController::Base
 
   def http_basic_auth
     return if ENV['ADMIN_PASS'].blank?
+
     authenticate_or_request_with_http_basic do |_username, password|
       password == ENV['ADMIN_PASS']
     end

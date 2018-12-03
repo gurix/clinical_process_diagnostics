@@ -3,17 +3,16 @@ require 'csv'
 class ClientsController < ApplicationController
   include ActionController::Live
 
-  before_action :http_basic_auth, only: :index
+  before_action :http_basic_auth, :csv_header, only: :index
   before_action :find_or_initialize_client, only: :create
   before_action :load_therapists # Loads the list with all available therapists
   before_action :load_client, only: %i[edit update]
 
   def index
-    csv_header
-
     Client.each do |client|
       client.sessions.each do |session|
         next if session.therapist.blank?
+
         response.stream.write CSV.generate_line([client.identifier, session.created_at, session.updated_at, session.therapist.name, session.therapist.email,
                                                  session.version, session.class.name, session.relationship, session.goals_and_topics,
                                                  session.approach_or_method, session.overall, session.coping, session.comment])
@@ -74,9 +73,9 @@ class ClientsController < ApplicationController
   end
 
   def csv_header
-    response.headers['Content-Disposition'] = 'attachment; filename="' + Time.now.strftime("%Y%m%d%H%M") + '.csv"'
+    response.headers['Content-Disposition'] = 'attachment; filename="' + Time.now.strftime('%Y%m%d%H%M') + '.csv"'
     response.headers['Content-Type'] = 'text/csv'
     response.stream.write CSV.generate_line(%w[identifier created_at updated_at therapist_name therapist_email version scale
-      relationship goals_and_topics approach_or_method overall coping comment])
+                                               relationship goals_and_topics approach_or_method overall coping comment])
   end
 end

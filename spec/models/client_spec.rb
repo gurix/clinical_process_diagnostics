@@ -19,7 +19,7 @@ describe Client do
   it 'generates a view token automatically' do
     session = create :client, therapist: create(:therapist)
     expect(session.token).not_to be_empty
-    expect(session.token_generated_at).to be < DateTime.now
+    expect(session.token_generated_at).to be < Time.now
   end
 
   it 'returns the session type depnding on the class of age' do

@@ -12,7 +12,7 @@ describe Therapist do
   it 'generates a view token automatically' do
     subject = create :therapist
     expect(subject.token).not_to be_empty
-    expect(subject.token_generated_at).to be < DateTime.now
+    expect(subject.token_generated_at).to be < Time.now
   end
 
   it 'validates the email address' do

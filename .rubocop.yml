@@ -1,13 +1,10 @@
 AllCops:
-  Include:
-    - Rakefile
-    - config.ru
   Exclude:
     - 'db/**/*'
     - 'config/**/*'
     - 'script/**/*'
     - bin/**
-    - spec/**/*
+    - spec/spec_helper.rb
 Documentation:
   Enabled: false
 LineLength:
@@ -17,3 +14,10 @@ AbcSize:
   Enabled: false
 FrozenStringLiteralComment:
   Enabled: false
+Metrics/BlockLength:
+  ExcludedMethods:
+    - describe
+    - context
+    - scenario
+    - it
+    - feature

@@ -13,7 +13,7 @@ module Tokenable
 
   def reset_token
     self.token = generate_token(4) until unique_token?
-    self.token_generated_at = DateTime.now
+    self.token_generated_at = Time.now
   end
 
   private

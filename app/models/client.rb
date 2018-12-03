@@ -22,7 +22,7 @@ class Client
   end
 
   def last_therapist
-    last_session.therapist if last_session
+    last_session&.therapist
   end
 
   def identifier=(value)
