@@ -41,6 +41,6 @@ class TherapistsController < ApplicationController
   end
 
   def therapist_params
-    params.require(:therapist).permit(:email, :name)
+    params.require(:therapist).permit(:email, :name, :disabled)
   end
 end

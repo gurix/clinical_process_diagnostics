@@ -65,7 +65,7 @@ class ClientsController < ApplicationController
   end
 
   def load_therapists
-    @therapists = Therapist.asc(:name)
+    @therapists = Therapist.active.asc(:name)
   end
 
   def load_client

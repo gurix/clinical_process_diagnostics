@@ -24,4 +24,12 @@ describe Therapist do
     subject.email = 'noemailaddress'
     expect(subject).not_to be_valid
   end
+
+  it 'scope active does not return disabled therapists' do
+    active_therapist = create :therapist
+    disabled_therapist = create :therapist, disabled: true
+
+    expect(subject.class.active).to include active_therapist
+    expect(subject.class.active).not_to include disabled_therapist
+  end
 end

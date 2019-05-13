@@ -24,10 +24,15 @@ feature 'manage therapists' do
     therapist = create :therapist, name: 'Hansli Muster'
 
     visit edit_therapist_path(therapist)
+    expect(therapist.reload.disabled).not_to eq true
 
     fill_in 'Name', with: 'Hans Muster'
+    check 'Therapeut nicht mehr in der Liste anzeigen.'
 
-    expect { click_button 'Speichern' }.to change { therapist.reload.name }.from('Hansli Muster').to('Hans Muster')
+    click_button 'Speichern'
+
+    expect(therapist.reload.name).to eq 'Hans Muster'
+    expect(therapist.reload.disabled).to eq true
   end
 
   scenario 'deleting a therapist' do

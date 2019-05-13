@@ -48,4 +48,16 @@ feature 'client' do
 
     expect(current_path).to eq new_client_survey_session_rating_scale_path(client)
   end
+
+  scenario 'deactivated therapists are not shown in the list of therapists' do
+    Therapist.create(name: 'Dr. Paul Weston', email: 'paul.weston@intreatment.movie')
+    Therapist.create(name: 'Deana Troi', email: 'deana.troi@ufp.org', disabled: true)
+
+    client = create :client, therapist: sigmund, class_of_age: 'adult'
+
+    visit edit_client_path(client)
+
+    expect(page).to have_select('client_therapist_id', with_options: ['Dr. Paul Weston'])
+    expect(page).not_to have_select('client_therapist_id', with_options: ['Deana Troi'])
+  end
 end
