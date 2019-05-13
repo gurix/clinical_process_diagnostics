@@ -111,6 +111,7 @@ de:
       amount_of_clients: "%{clients} Klienten"
       edit: "%{name} bearbeiten"
       new: Einen Therapeuten neu erfassen
+      disabled: Therapeut wird nicht angezeigt in der Auswahlliste
 
     show:
       logout: Zurück zur Startseite

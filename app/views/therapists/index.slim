@@ -10,7 +10,11 @@ main role="main"
       th
     - @therapists.each do |therapist|
       tr
-        td = therapist.name
+        td style="max-width: 250px;"
+          = therapist.name
+          - if therapist.disabled?
+            br
+            .text-danger = t('.disabled')
         td = mail_to therapist.email
         td
           = link_to t('.amount_of_sessions', sessions: therapist.sessions.size), therapist_path(therapist.token)
@@ -18,5 +22,5 @@ main role="main"
           = link_to t('.amount_of_clients', clients: therapist.clients.size), therapist_path(therapist.token)
         td
           = link_to t('.edit', name: therapist.name), edit_therapist_path(therapist)
-  
+
   = link_to t('.new'), new_therapist_path
