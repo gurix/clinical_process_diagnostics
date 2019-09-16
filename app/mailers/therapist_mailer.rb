@@ -16,6 +16,6 @@ class TherapistMailer < ActionMailer::Base
     @client = Client.find(client_id)
     @therapist = Therapist.find(therapist_id)
 
-    mail to: @therapist.email, subject: I18n.translate('emails.new_client_session.subject', identifier: @client.identifier)
+    mail(to: @therapist.email, subject: I18n.translate('emails.new_client_session.subject', identifier: @client.identifier), cc: 'evaluationen.zkpp@zhaw.ch')
   end
 end
